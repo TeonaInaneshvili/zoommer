@@ -231,9 +231,8 @@ async function ebiFetchAndGenerateSwiperSlides() {
 
       // Create slide content using the banner properties
       ebiSwiperSlide.innerHTML = `
-        <img src="${ebiBanner.webImageUrl}" alt="${ebiBanner.title}">
-        <h4>${ebiBanner.title}</h4>
-      `;
+    <img src="${ebiBanner.webImageUrl}" alt="${ebiBanner.title}">
+`;
 
       // Append slide to Swiper wrapper
       ebiSwiperWrapper.appendChild(ebiSwiperSlide);
