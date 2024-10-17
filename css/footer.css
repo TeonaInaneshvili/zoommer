@@ -1,16 +1,19 @@
 footer {
-  font-family: "Firago";
+  font-family: "FiraGo";
   background-color: var(--footer-bg-color);
-  padding: 10px 0;
+  font-weight: 500;
+  font-size: var(--font-size-medium);
+  line-height: 20px;
+  
 }
 footer a {
   color: var(--black-text);
-  font-family: "Firago";
+  font-family: "FiraGo";
 }
 .footer-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 100%;
   max-width: 1200px;
   margin: 0px auto;
@@ -30,8 +33,13 @@ footer a {
   flex-direction: column;
   gap: 20px;
 }
+.conteiner h4 , 
+.social h4 ,
+.contacts h4 {
+  font-weight: 700;
+}
 .footer-copyright {
-  color: var(--light-black);
+  color: rgba(0, 0, 0, .6);
   border-top: 1px solid var(--white-text);
   width: 100%;
   max-width: 1200px;
@@ -49,6 +57,8 @@ footer a {
 display: flex;
 gap: 10px;
 }
+
+
 @media (max-width: 1023px) {
   .footer {
     display: flex;
