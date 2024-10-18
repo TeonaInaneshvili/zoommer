@@ -475,3 +475,38 @@ async function getDataFromZoommerApi() {
 };
 getDataFromZoommerApi().then();
 
+
+
+
+// Get the scroll-up button, chat icon, and popup elements
+const scrollUpBtn = document.getElementById("scrollUp");
+const chatIcon = document.getElementById("chatIcon");
+const chatPopup = document.getElementById("chatPopup");
+const closePopup = document.getElementById("closePopup");
+
+window.onscroll = function () {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollUpBtn.style.display = "flex";
+  } else {
+    scrollUpBtn.style.display = "none";
+  }
+};
+
+scrollUpBtn.addEventListener("click", function () {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0; 
+});
+
+chatIcon.addEventListener("click", function () {
+  chatPopup.style.display = "block";
+});
+
+closePopup.addEventListener("click", function () {
+  chatPopup.style.display = "none";
+});
+
+window.addEventListener("click", function (event) {
+  if (event.target == chatPopup) {
+    chatPopup.style.display = "none";
+  }
+});

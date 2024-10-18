@@ -539,3 +539,93 @@ body {
 .salePrice {
   color: var(--corp-color);
 }
+
+
+.floating {
+    position: fixed;
+    z-index: 8;
+    bottom: 108px;
+    right: 28px;
+
+}
+.floating-div {
+      width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.scroll-up {
+  cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+    transition: transform 0.2s;
+    background: var(--white-400);
+}
+.compare {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+  transition: transform 0.2s;
+  background: rgba(0, 87, 159, 0.5);
+}
+.chat img{
+  user-select: none;
+  transition: 0.5s;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 320px;
+  height: 500px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  z-index: 1000;
+}
+
+.popup-content {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.popup-content p {
+  color: var(--corp-color);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+.popup-content .close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
