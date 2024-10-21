@@ -130,7 +130,7 @@ header {
   gap: 10px;
   padding: 10px;
   cursor: pointer;
-  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 10px);
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 7px);
 }
 
 .category__btn-name {
@@ -145,7 +145,7 @@ header {
   background-color: var(--white-text);
   border: 1px solid rgba(236, 94, 42, 0.5);
   border-radius: 12px;
-  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 10px);
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 7px);
   padding: 11px;
   cursor: pointer;
   display: flex;
@@ -181,7 +181,7 @@ header {
   gap: 10px;
   padding: 10px;
   cursor: pointer;
-  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 10px);
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 7px);
   cursor: pointer;
 }
 
@@ -269,7 +269,7 @@ header {
   gap: 10px;
   padding: 10px;
   cursor: pointer;
-  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 10px);
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 7px);
 }
 
 .cart__button h4 {
@@ -300,7 +300,7 @@ header {
   background: var(--white-text);
   padding: 7px 10px;
   border-radius: 12px;
-  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 10px);
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 7px);
   min-width: 48px;
 }
 
@@ -315,7 +315,7 @@ header {
 .lang-change__geo-flag img {
   width: 28px;
   border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 7px;
   object-fit: contain;
 }
 
@@ -388,6 +388,7 @@ header {
   .header__lang-change {
     background-color: var(--nav-bg-color);
     width: auto;
+    filter: unset;
   }
 
   .bottom__mainPart-right {
@@ -413,7 +414,7 @@ header {
     background-color: white;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
     padding: 15px;
     z-index: 100;
   }

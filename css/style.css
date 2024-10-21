@@ -1,5 +1,6 @@
 :root {
-  --swiper-navigation-size: 20px !important;
+
+  --swiper-navigation-size: 14px !important;
 }
 
 body {
@@ -8,7 +9,6 @@ body {
   font-size: var(--font-size-small);
   color: var(--black-text);
   background-color: var(--white-bachkround);
-  /* min-width: 320px; */
 }
 .scroll-bar div {
   opacity: 1;
@@ -47,6 +47,9 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(236, 94, 42, 0.8);
   width: 12px;
+}
+::-webkit-line-clamp {
+width: 0;
 }
 
 .log-in__pop-up-container {
@@ -315,7 +318,7 @@ body {
 }
 
 .swiper {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .slidersMainBox {
   width: 100%;
@@ -340,18 +343,28 @@ body {
   flex-direction: column;
 }
 
+.swiperSlide5 {
+  height: 80px;
+  align-items: center;
+}
 .swiper-wrapper {
   gap: 35px;
 }
 
+.swiper5button {
+  top: 64% !important;
+}
+
 .mySwiper_header {
   opacity: 0.8;
+  font-family: "FiraGO", sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
   color: var(--black-text);
   margin-bottom: 30px;
   margin-top: 30px;
+  font-family: "FiraGO", sans-serif;
 }
 .mainCardbox {
   position: relative;
@@ -383,7 +396,7 @@ body {
   position: absolute;
   bottom: 130px;
   left: 0px;
-  background-color: rgb(247, 144, 9);
+  background-color: var(--news-color);
   padding: 5px 8px;
   font-size: 9px;
   font-weight: 500;
@@ -426,7 +439,7 @@ body {
 .cardTitle {
   color: rgb(0, 0, 0);
   opacity: 0.8;
-  font-family: "firago", sans-serif;
+  font-family: "FiraGO", sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
@@ -461,7 +474,7 @@ body {
 }
 .addCart {
   position: relative;
-  background: rgba(236, 94, 42, 0.5);
+  background: var(--add-btn-color);
   border-radius: 4px;
   padding: 10px 14px;
   display: flex;
@@ -485,13 +498,11 @@ body {
 }
 
 .swiper-button-next,
-.swiper-button-prev,
-.swiper-button-next2,
-.swiper-button-prev2 {
+.swiper-button-prev {
   width: 50px !important;
   height: 50px !important;
   border-radius: 50%;
-  color: black !important;
+  color: rgb(6 0 0 / 70%) !important;
   size: var(--swiper-navigation-size);
   font-weight: 600;
   background-color: white;
@@ -627,169 +638,250 @@ body {
   cursor: pointer;
   font-size: 18px;
 }
-
 /* trade politics */
-
-.components-div {
+.components-div,
+.branches {
   width: 100%;
   max-width: 1200px;
   font-size: 16px;
   font-family: "Firago";
-  margin: 0px auto;
-  padding: 0px 15px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
-.trade-po-content a {
+
+.trade-po-content a,
+.career-content a {
   color: inherit;
   text-decoration: none;
 }
+
 .components-h2 {
   padding-bottom: 24px;
   margin-bottom: 30px;
   border-bottom: 2px solid var(--nav-bg-color);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   line-height: 24px;
   color: var(--black-main);
 }
-.trade-po-content h3 {
+
+.trade-po-content h3,
+.installment-content h3,
+.career-content h3,
+.tradeIn-content h3 {
   text-align: center;
   font-weight: 700;
+  margin: 12pt 0;
 }
-.trade-po-content h4 {
-  color: rgb(103, 106, 108);
-  font-size: 10pt;
+
+.trade-po-content h4,
+.installment-content h4,
+.components-div h4,
+.career-content h4 {
+  line-height: 1.38;
+  margin: 11pt 0 2pt;
   font-weight: 700;
 }
+
 .trade-po-content p,
-li {
+.installment-content p,
+.installment-list p,
+.career-content p,
+.career-list p,
+.tradeIn-content p,
+.installment-content span,
+.career-content span,
+.tradeIn-content span {
   line-height: 20px;
   font-weight: 500;
+  margin: 12pt 0;
 }
 
-/* installment */
-.installment-content h3 {
-  font-size: 14pt;
-  line-height: 1.38;
-  text-align: center;
-  margin-top: 12pt;
-  margin-bottom: 12pt;
-  font-weight: 700;
-}
-.installment-content h4 {
-  line-height: 1.38;
-  margin-top: 11pt;
-  margin-bottom: 2pt;
-  font-size: 10pt;
-  font-weight: 700;
-}
-.installment-content p {
-  line-height: 1.38;
-  margin-top: 12pt;
-  margin-bottom: 12pt;
-  font-size: 11pt;
-}
-.installment-content span {
-  font-size: 11pt;
-  margin-top: 12pt;
-  margin-bottom: 12pt;
-  font-weight: 700;
+.installment-content {
+  margin: 0;
 }
 
-.installment-content-img-div {
+.installment-content-img-div,
+.career-content-img {
   border: none;
-  width: 602px;
+  width: 100%;
 }
-.installment-content-img-div img {
+
+.installment-content-img-div img,
+.career-content-img img,
+.promotions-img-div img {
   width: 100%;
 }
 
 .installment-list {
-  margin-bottom: 0px;
+  margin-bottom: 0;
   padding-inline-start: 48px;
 }
 
-.installment-list li {
-  list-style-type: disc;
-  font-size: 11pt;
-  vertical-align: baseline;
-  white-space: pre;
-}
-
-.installment-list p {
-  line-height: 1.38;
-  margin-top: 0pt;
-  margin-bottom: 0pt;
-  font-size: 11pt;
-  background-color: transparent;
-  vertical-align: baseline;
-  text-wrap: wrap;
-}
-
-/* carrer */
-.career-content h3 {
-  font-size: 12pt;
-  line-height: 1.38;
-  text-align: center;
-  margin-top: 12pt;
-  margin-bottom: 12pt;
-  font-weight: 700;
-}
-.components-div h4 {
-  line-height: 1.38;
-  margin-top: 11pt;
-  margin-bottom: 2pt;
-  font-size: 12pt;
-  font-weight: 700;
-  
-}
-.career-content p {
-  font-size: 11pt;
-  font-weight: 400;
-  line-height: 1.295;
-    margin-top: 0pt;
-    margin-bottom: 8pt;
-}
-.career-content a {
-  font-size: 11pt;
-  font-weight: 700;
-    line-height: 1.295;
-    margin-top: 0pt;
-    margin-bottom: 8pt;
-    color: blue;
-    text-decoration: underline;
-    text-decoration-color: black;
-    -moz-text-decoration-color: black;
-}
-.career-content-img {
-  width: 233px !important;
-}
-.career-content-img img {
-  width: 100% !important;
-}
-.career-content p {
-  line-height: 1.38;
-  margin-top: 12pt;
-  margin-bottom: 12pt;
-  font-size: 11pt;
-}
-.career-content span {
-  font-size: 11pt;
-  margin-top: 12pt;
-  margin-bottom: 12pt;
-  font-weight: 700;
-}
+.installment-list li,
 .career-list li {
   list-style-type: disc;
   font-size: 11pt;
-
-}
-
-.carrer-list p {
-  line-height: 1.38;
-  margin-top: 0pt;
-  margin-bottom: 0pt;
-  font-size: 11pt;
-  background-color: transparent;
   vertical-align: baseline;
-  text-wrap: wrap;
 }
+
+.city-selector-container {
+  background: var(--white-400);
+  width: 260px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.city-selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.city-selector-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  color: var(--black-06);
+  margin: 0;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.arrow-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.city-list {
+  display: none; 
+  background-color: #fff;
+  padding: 10px;
+}
+
+.city-list.active {
+  display: block;
+}
+
+.city-option {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #333;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  width: 20px;
+}
+
+.branches {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.brenches-contents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.branches-map {
+  margin: 20px auto;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Grid Container for Address Cards */
+.address-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Address Card Styles */
+.address-card {
+  border-radius: 8px;
+  background: var(--nav-bg-color);
+  padding: 10px 20px;
+  height: 110px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  transition: 0.2s;
+  border: 1px solid var(--white-400);
+}
+
+.address-card:hover {
+  transform: scale(1.01);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: end
+}
+.contact-number {
+  color: var(--corp-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+.mySwiper14 {
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 900px) {
+  .swiper-slide {
+    width: 130px !important;
+    height: 100%;
+  }
+  .swiper-wrapper {
+    gap: 12px;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+
+  .mySwiper_header {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+

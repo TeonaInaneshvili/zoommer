@@ -14,23 +14,22 @@
 }
 
 @font-face {
-    font-family: 'FiraGO';
-    src: url('/css/fonts/FiraGO-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "FiraGO";
+  src: url("/css/fonts/FiraGO-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-    font-family: 'FiraGO', sans-serif;
+  font-family: "FiraGO", sans-serif;
 }
-
 
 /* ფერები */
 :root {
   --corp-color: #ec5e2a; /*  corporation color (first nav/new price/)*/
   --nav-bg-color: #edebebbd; /*navigation background color-grey*/
   --gift-icon-color: #ffa024; /*gift icon color*/
-  --orange-second:#f6af95; /*for log-in popup border color*/
+  --orange-second: #f6af95; /*for log-in popup border color*/
   --news-color: #f79009; /*news (best price,gifts, new) block color*/
   --add-btn-color: #f28f6a; /*add to cart button color*/
   --vs-btn-color: #f2f2f2; /*product compare button color*/
@@ -38,13 +37,12 @@ body {
   --footer-bg-color: #f2f2f2; /*footer background color*/
   --white-text: #fff; /*white text color*/
   --black-text: #000; /*black text for some button labels, the old price, and product names.*/
-  --light-black: rgba(
-    0,
-    0,
-    0,
-    0.8
-  ); 
-  --all-category-text-color: rgb(10, 50, 81);/* bfont color for all-category page*/
+  --light-black: rgba(0, 0, 0, 0.8);
+  --all-category-text-color: rgb(
+    10,
+    50,
+    81
+  ); /* bfont color for all-category page*/
 
   /*text color for the entire aside block and the entire footer*/
   --compare-icon: #00579f80; /*compare button color*/
@@ -64,8 +62,8 @@ html {
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  font-family: "Oxygen", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    sans-serif;
+  font-family: "FiraGO", "Oxygen", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", sans-serif;
 }
 
 /* ფლექსი როგორც კლასი.. გოგოებო რაც გინდათ რომ ფლექსი იყოს, მეორე კლასად მიუწერეთ flex სახელშივე */
