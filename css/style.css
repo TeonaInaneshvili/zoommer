@@ -284,6 +284,313 @@ body {
   color: var(--corp-color);
 }
 
+.fixed__icons-container {
+  position: fixed;
+  z-index: 8;
+  bottom: 108px;
+  right: 28px;
+}
+.floating-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.fixed__icon-up {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+  transition: transform 0.2s;
+  background: var(--white-400);
+}
+.fixed__icon-compare {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+  transition: transform 0.2s;
+  background: rgba(0, 87, 159, 0.5);
+}
+.fixed__icon-chat img {
+  user-select: none;
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 320px;
+  height: 500px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  z-index: 1000;
+}
+
+.popup-content {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.popup-content p {
+  color: var(--corp-color);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+.popup-content .close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+/* trade politics */
+.components-div,
+.branches {
+  width: 100%;
+  max-width: 1200px;
+  font-size: 16px;
+  font-family: "Firago";
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.trade-po-content a,
+.career-content a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.components-h2 {
+  padding-bottom: 24px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--nav-bg-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--black-main);
+}
+
+.trade-po-content h3,
+.installment-content h3,
+.career-content h3,
+.tradeIn-content h3 {
+  text-align: center;
+  font-weight: 700;
+  margin: 12pt 0;
+}
+
+.trade-po-content h4,
+.installment-content h4,
+.components-div h4,
+.career-content h4 {
+  line-height: 1.38;
+  margin: 11pt 0 2pt;
+  font-weight: 700;
+}
+
+.trade-po-content p,
+.installment-content p,
+.installment-list p,
+.career-content p,
+.career-list p,
+.tradeIn-content p,
+.installment-content span,
+.career-content span,
+.tradeIn-content span {
+  line-height: 20px;
+  font-weight: 500;
+  margin: 12pt 0;
+}
+
+.installment-content {
+  margin: 0;
+}
+
+.installment-content-img-div,
+.career-content-img {
+  border: none;
+  width: 100%;
+}
+
+.installment-content-img-div img,
+.career-content-img img,
+.promotions-img-div img {
+  width: 100%;
+}
+
+.installment-list {
+  margin-bottom: 0;
+  padding-inline-start: 48px;
+}
+
+.installment-list li,
+.career-list li {
+  list-style-type: disc;
+  font-size: 11pt;
+  vertical-align: baseline;
+}
+
+.city-selector-container {
+  background: var(--white-400);
+  width: 260px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.city-selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.city-selector-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  color: var(--black-06);
+  margin: 0;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.arrow-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.city-list {
+  display: none; 
+  background-color: #fff;
+  padding: 10px;
+}
+
+.city-list.active {
+  display: block;
+}
+
+.city-option {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #333;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  width: 20px;
+}
+
+.branches {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.brenches-contents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.branches-map {
+  margin: 20px auto;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Grid Container for Address Cards */
+.address-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Address Card Styles */
+.address-card {
+  border-radius: 8px;
+  background: var(--nav-bg-color);
+  padding: 10px 20px;
+  height: 110px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  transition: 0.2s;
+  border: 1px solid var(--white-400);
+}
+
+.address-card:hover {
+  transform: scale(1.01);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: end
+}
+.contact-number {
+  color: var(--corp-color);
+}
+
+
+
+
+
+
+
+
+
+
+
 .mySwiper14 {
   margin-bottom: 60px;
 }
