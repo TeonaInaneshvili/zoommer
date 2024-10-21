@@ -596,33 +596,31 @@ header {
 }
 
 .header__lang-change-container {
-  display: none;
   position: absolute;
   width: 100%;
   top: 100%;
   left: 0px;
   margin-top: 10px;
   background: var(--white-main);
-  display: flex;
-  flex-direction: column;
+  display: none;
   overflow: hidden;
   border-radius: 12px;
   filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 7px);
+  cursor: pointer;
+  
 }
-.geo,
-.eng {
-  display: none;
+.geo, .eng{
   padding-block: 7px;
   text-align: center;
+  background-color: var(--white-text);
   cursor: pointer;
+  color: rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.02rem;
 }
 
-.geo:hover,
-.eng:hover,
-.header__lang-change-container { 
+.header__lang-change:hover .header__lang-change-container {
   display: block;
 }
-
 
 .header__Cart-name,
 .header__log-in-name {
