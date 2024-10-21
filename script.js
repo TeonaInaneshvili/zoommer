@@ -485,9 +485,6 @@ function showRecentlyVieweds() {
         }
       }
     }
-<<<<<<< HEAD
-    //call showRecentlyVieweds function
-=======
   }
 }
 
@@ -557,69 +554,10 @@ async function getDataFromZoommerApi() {
         itemIndex++;
       }
     }
->>>>>>> 981a714acbb99f1df562b96530fabe6a694991dd
     showRecentlyVieweds();
   } catch (e) {
     console.log(e);
   }
-<<<<<<< HEAD
-
-};
-getDataFromZoommerApi().then();
-
-
-
-
-// Get the scroll-up button, chat icon, and popup elements
-const scrollUpBtn = document.getElementById("scrollUp");
-const chatIcon = document.getElementById("chatIcon");
-const chatPopup = document.getElementById("chatPopup");
-const closePopup = document.getElementById("closePopup");
-
-window.onscroll = function () {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    scrollUpBtn.style.display = "flex";
-  } else {
-    scrollUpBtn.style.display = "none";
-  }
-};
-
-scrollUpBtn.addEventListener("click", function () {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0; 
-});
-
-chatIcon.addEventListener("click", function () {
-  chatPopup.style.display = "block";
-});
-
-closePopup.addEventListener("click", function () {
-  chatPopup.style.display = "none";
-});
-
-window.addEventListener("click", function (event) {
-  if (event.target == chatPopup) {
-    chatPopup.style.display = "none";
-  }
-});
-   
-    getDataFromZoommerApi().then();
-
-
-
-// branches
-
-const citySelectorHeader = document.getElementById('citySelectorHeader');
-const cityList = document.getElementById('cityList');
-const arrowIcon = document.getElementById('arrowIcon');
-
-// Toggle visibility of the city list on click
-citySelectorHeader.addEventListener('click', function() {
-    cityList.classList.toggle('active');
-    arrowIcon.classList.toggle('rotated');
-});
-=======
 }
 
 getDataFromZoommerApi().then();
->>>>>>> 981a714acbb99f1df562b96530fabe6a694991dd
