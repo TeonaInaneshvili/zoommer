@@ -48,9 +48,6 @@ body {
   background: rgba(236, 94, 42, 0.8);
   width: 12px;
 }
-::-webkit-line-clamp {
-width: 0;
-}
 
 .log-in__pop-up-container {
   display: none;
