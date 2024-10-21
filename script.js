@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   // Load header and footer HTML
   loadHTML("header.html", "header");
@@ -28,6 +31,51 @@ document.addEventListener("DOMContentLoaded", function () {
     cartPopup.innerHTML = ""; // Optionally clear the content when not hovering
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+function loadHTML(filename, elementSelector) {
+  fetch(filename)
+    .then(response => response.text())
+    .then(data => {
+      document.querySelector(elementSelector).innerHTML = data;
+    })
+    .catch(error => console.log('Error loading file:', error));
+}
+
+window.onscroll = function() {
+const headerTopPart = document.querySelector(".header__top-part");
+const headerSecondLine = document.getElementById("header__second-line");
+
+if (window.scrollY > 50) {
+headerTopPart.style.display = "none"; 
+headerSecondLine.classList.add("scrolled"); 
+} else {
+headerTopPart.style.display = "flex"; 
+headerSecondLine.classList.remove("scrolled"); 
+}
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 document.addEventListener("click", function () {
@@ -76,36 +124,6 @@ document.addEventListener("click", function () {
 });
 
 
-
-
-
-
-
-
-
-// Function to load HTML content
-function loadHTML(zoomer, elementSelector) {
-  fetch(zoomer)
-    .then((response) => response.text())
-    .then((data) => {
-      document.querySelector(elementSelector).innerHTML = data;
-    })
-    .catch((error) => console.log("Error loading file:", error));
-}
-
-// Header scroll functionality
-const headerTopPart = document.querySelector(".header__top-part");
-const headerSecondLine = document.getElementById("header__second-line");
-
-window.onscroll = function () {
-  if (window.pageYOffset > 50) {
-    headerTopPart.style.display = "none";
-    headerSecondLine.classList.add("scrolled");
-  } else {
-    headerTopPart.style.display = "flex";
-    headerSecondLine.classList.remove("scrolled");
-  }
-};
 
 // Function to load HTML content into a specified element
 function loadHTML(filename, elementSelector) {
