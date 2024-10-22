@@ -10,11 +10,10 @@ footer a {
 .footer-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
   max-width: 1200px;
   margin: 0px auto;
-  padding: 0px 15px;
 }
 .conteiner {
   margin-top: 20px;
@@ -35,8 +34,8 @@ footer a {
   border-top: 1px solid var(--white-text);
   width: 100%;
   max-width: 1200px;
-  margin: 10px auto;
-  padding: 10px 50px;
+  margin: 0 auto;
+  padding: 10px 0;
 }
 
 .footer h4 {
