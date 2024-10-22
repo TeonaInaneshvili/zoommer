@@ -48,8 +48,7 @@ body {
   width: 12px;
 }
 
-
-.swiper {
+.swiper-costum-style {
   margin-bottom: 30px;
 }
 .slidersMainBox {
@@ -68,7 +67,7 @@ body {
   justify-content: space-between;
   margin-top: 30px;
 }
-.swiper-slide {
+.swiper-slide-custom-style {
   max-width: 160px;
   height: 303px;
   display: flex;
@@ -79,7 +78,7 @@ body {
   height: 80px;
   align-items: center;
 }
-.swiper-wrapper {
+.swiper-wrapper-costum-style {
   gap: 35px;
 }
 
@@ -288,12 +287,12 @@ body {
 }
 
 @media screen and (max-width: 900px) {
-  .swiper-slide {
+  .swiper-slide-custom-style {
     width: 130px !important;
     height: 100%;
   }
-  .swiper-wrapper {
-    gap: 12px;
+  .swiper-wrapper-costum-style {
+    gap: 20px;
   }
 }
 
