@@ -123,10 +123,9 @@ table {
   border-spacing: 0;
 }
 
-
 body {
   font-family: var(--font-firago), sans-serif; /* Sets the font for the entire document */
-  background-color: #f8f9fa; /* Sets a light background color for the body */
+  background-color: white; /* Sets a light background color for the body */
 }
 
 /* Centers the content horizontally and starts aligning children at the top */
@@ -136,76 +135,72 @@ body {
   display: flex; /* Enables flexbox layout */
   justify-content: center; /* Centers children horizontally */
   align-items: flex-start; /* Aligns children to the top */
-  padding: 0 15px; /* Adds space inside the section */
+  padding: 0 15px; /*Adds space inside the section */
   margin: 140px auto 0; /* Adds space on top, centers left and right */
   position: relative; /* Sets a positioning context for absolutely positioned children */
 }
 
-/* Sets the layout for the swiper section within the main section */
-.first__section-swiper {
-  flex: 0 1 70%; /* Allocates 70% of space to the swiper */
-  height: 342px; /* Sets the height of the swiper */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Adds a shadow effect for depth */
-  background-color: white; /* Sets the background color of the swiper */
-  border-radius: 12px; /* Rounds the corners of the swiper */
-  position: absolute; /* Positions the swiper absolutely within its relative parent */
-  flex-shrink: 0; /* Prevents the swiper from shrinking */
-  top: 0; /* Align it with the top of the first section */
-  left: 30px;
-}
-
-/* Defines the dimensions and style of the categories section */
+/* Categories section */
 .first__section-categories {
   display: flex; /* Enables flexbox layout */
   flex-direction: column; /* Stack children vertically */
   width: 246px; /* Width of the categories section */
   height: 344px; /* Height of the categories section */
   padding: 0; /* No padding */
-  margin: 0; /* No margin */
+  margin-right: 30px; /* No margin */
   border: 0; /* No border */
   background-color: white; /* Background color */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-  overflow: hidden; /* Hides any overflowing content */
-  z-index: 3; /* Sets stacking order above the swiper */
+  position: relative; /* Add this line to create the positioning context */
 }
 
-/* Styles for individual main parent categories */
+/* Main Parent Category */
 .main-parent-category {
-  display: flex; /* Enables flexbox layout */
-  justify-content: flex-start; /* Aligns content to the start */
-  align-items: center; /* Centers content vertically */
+  caret-color: transparent; /* Makes the caret invisible */
   width: 246px; /* Sets the width of each category */
-  height: 38px; /* Sets the height of each category */
+  height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  cursor: pointer;
   padding: 11.5px 10px 11.5px 15px;
-  border-bottom: 1px solid #eaeaea; /* Adds a bottom border for separation */
-  cursor: pointer; /* Changes cursor to pointer on hover */
-  font-size: 12px; /* Sets the font size for category text */
-  margin-bottom: 5px; /* Optional: Adds spacing between categories */
 }
 
+/* Changes link color on hover, visited, or active */
+.main-parent-category a:hover,
+.main-parent-category a:visited,
+.main-parent-category a:active {
+  color: black; /* Keeps link color consistent */
+  text-decoration: none; /* Ensures no underline */
+}
 /* Sets styles for category images */
-.main-parent-category img {
-  width: 24px; /* Sets a fixed width for category icons */
-  color: #999999;
-  height: 24px; /* Sets a fixed height for category icons */
-  margin-right: 10px; /* Adjusts space to the right of the icon */
-}
-
-/* Sets the style for category headings */
-.main-parent-category h4 {
-  color: #999999;
-  font-size: 16px; /* Increase font size for better visibility */
-  font-weight: 600; /* Makes the category name bold */
-  color: #333; /* Sets the text color */
-  padding: 11.5px 15px; /* Applies top/bottom and left/right padding */
-  margin: 0; /* Removes any default margin */
-}
-
-/* Styles for links within parent categories */
 .main-parent-category a {
-  color: black; /* Sets link color */
-  text-decoration: none; /* Removes underline from links */
+  display: flex; /* Make the link behave as a block and flexbox container */
+  align-items: center; /* Vertically align the items (img and h4) */
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit the color from the parent */
+}
+
+.main-parent-category img {
+  width: 23px; /* Fixed width for category icons */
+  height: 20px; /* Fixed height for category icons */
+  margin-right: 10px; /* Adjust space to the right of the icon */
+}
+
+.main-parent-category h4 {
+  font-weight: 500; /* Font weight for category heading */
+  font-size: 12px; /* Font size */
+  line-height: 14px; /* Line height */
+  color: rgba(0, 0, 0, 0.8);
+  opacity: 0.8; /* Opacity */
+  cursor: pointer; /* Pointer on hover */
+  margin: 0; /* Remove default margin */
+}
+
+/* Change background color of the entire parent category on hover */
+.main-parent-category:hover {
+  background-color: #f2f2f2; /* Set hover background color */
 }
 
 /* Changes link color on hover, visited, or active */
@@ -216,96 +211,136 @@ body {
   text-decoration: none; /* Ensures no underline */
 }
 
-/* Defines the style for the submenu that appears on hover */
+/* Subcategories menu - fixed width */
 .subcategories-menu {
-  position: absolute; /* Positions the submenu absolutely relative to the parent category */
-  top: 0; /* Aligns the top of the submenu with the parent category */
-  left: 100%; /* Positions the submenu to the right of the parent category */
-  transform: translateX(15px); /* Shifts the submenu right for spacing */
-  width: 70%; /* Sets the width of the submenu */
-  background-color: white; /* Sets the background color of the submenu */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Adds a shadow effect for depth */
-  padding: 20px; /* Adds padding inside the submenu */
-  border-radius: 8px; /* Rounds the corners of the submenu */
-  z-index: 4; /* Sets stacking order above the swiper */
-  display: none; /* Hides the submenu initially */
+  height: 525px;
+  display: none;
+  position: absolute;
+  top: 0; /* Aligns with the top of the categories section */
+  left: 246px; /* Positions submenu next to the first category */
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;
+  border-radius: 12px;
+  /* gap: 30px; */
+  padding: 20px;
+}
+#subcategories-container {
+  position: relative; /* This makes the container a reference for absolute positioning */
 }
 
-/* Container for the submenu items */
-.submenu-inner-container {
-  position: relative; /* Sets a positioning context for absolutely positioned children */
-  display: grid; /* Enables grid layout for submenu items */
-  grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns for items */
-  grid-auto-rows: min-content; /* Rows adjust height based on content */
-  gap: 20px; /* Adds space between grid items */
-  align-items: start; /* Aligns grid items to the top */
+/* Styles for the bottom-left image container */
+.submenu-bottom-image {
+  display: none; /* Hides the container */
+  position: absolute; /* Position it relative to the #subcategories-container */
+  bottom: 0;
+  right: 0;
 }
 
-/* Styles for the bottom-left image inside the submenu */
-.bottom-left-image {
-  position: absolute; /* Positions the image absolutely within the submenu */
-  bottom: 20px; /* Places the image 20px from the bottom */
-  left: 20px; /* Places the image 20px from the left */
-  width: 150px; /* Sets a fixed width for the image */
-  border-radius: 12px; /* Rounds the corners of the image container */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
-  background-color: var(
-    --white-main
-  ); /* Sets background color for the image container */
+/* Style the image inside the submenu-bottom-image div */
+.submenu-bottom-image img {
+  width: 246px;
+  min-height: 342px;
+  background: var(--white-main);
+  border-radius: 12px;
+  display: block; /* Ensure the image behaves as a block element */
 }
 
-/* Ensures the submenu shows when hovering over the parent category */
+/* Flex basis adjustment to ensure max 4 columns */
+.parent-category,
+.subcategory-item {
+  flex: 0 1 22%; /* Ensures that up to 4 items fit in a row */
+  max-width: 22%; /* Maximum width per item */
+  min-width: 150px; /* Ensure minimum width for better visibility */
+  display: block;
+  text-decoration: none;
+  padding: 5px 0;
+  white-space: nowrap; /* Prevent items from wrapping inside the box */
+}
+
+/* Prevent flex from wrapping new row until 4 items are present */
+.subcategories-menu .parent-category-container {
+  width: calc(25% - 15px); /* Adjust to ensure spacing aligns well */
+}
+
+/* Show subcategories when hovering over a main parent category */
 .main-parent-category:hover .subcategories-menu {
-  visibility: visible; /* Change display to visibility */
-  opacity: 1; /* Ensure it is fully opaque */
-  transition: visibility 0s, opacity 0.3s linear; /* Add transition for smooth effect */
+  display: flex;
 }
 
-/* Initially hide the submenu */
-.subcategories-menu {
-  visibility: hidden; /* Change display to visibility */
-  opacity: 0; /* Make it fully transparent */
-  transition: visibility 0s, opacity 0.3s linear; /* Transition for smooth effect */
-  pointer-events: auto; /* Ensure pointer events are enabled */
-  margin-left: 5px; /* Add a small margin */
-}
-
-/* Styles for parent categories */
+/* Styling for Parent Category Headers in Submenu */
 .parent-category {
-  font-size: 16px; /* Sets font size for parent categories */
-  font-weight: bold; /* Makes the text bold */
-  color: black; /* Sets text color */
+  font-size: 16px !important; /* Sets font size for parent categories */
+  font-weight: bold !important; /* Makes the text bold */
+  color: black !important; /* Sets text color */
   text-decoration: none; /* Removes underline */
   margin-bottom: 5px; /* Adds space below each parent category */
   white-space: nowrap; /* Prevents text wrapping */
 }
 
-/* Keeps the color the same on hover for parent categories */
-.parent-category:hover {
-  color: black; /* Maintains color on hover */
-  text-decoration: none; /* Ensures no underline on hover */
-}
-
-/* Styles for subcategory items */
+/* Styling for Subcategories (Links) */
 .subcategory-item {
-  font-size: 14px; /* Sets font size for subcategories */
-  color: #999999; /* Sets a lighter color for subcategories */
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  opacity: 0.8;
   text-decoration: none; /* Removes underline */
   white-space: nowrap; /* Prevents text wrapping */
 }
 
-/* Changes color for subcategories on hover */
 .subcategory-item:hover {
-  color: #999999; /* Maintains hover color */
+  color: #ff6600;
+  text-decoration: underline;
 }
 
-/* Styles for the swiper section */
-.first__section-swiper {
-  width: 894px; /* Fixed width for the swiper */
-  height: 342px; /* Fixed height for the swiper */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
-  background-color: white; /* Sets background color for the swiper */
-  border-radius: 12px; /* Rounds corners for the swiper */
+/* Hide empty subcategory menus */
+.subcategories-menu:empty {
+  display: none; /* If no subcategories, don't display empty space */
+}
+
+/* Responsive settings */
+@media (max-width: 1024px) {
+  .first__section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .first__section-categories {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .subcategories-menu {
+    min-width: 400px; /* Adjust width for smaller screens */
+    flex-wrap: wrap; /* Allow wrapping */
+    flex-direction: row;
+  }
+
+  .parent-category,
+  .subcategory-item {
+    flex: 1 1 45%; /* Switch to 2 columns on small screens */
+    max-width: 45%;
+  }
+}
+
+/* Adjustments for better column distribution */
+@media (max-width: 768px) {
+  .subcategories-menu {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+  }
+
+  .parent-category,
+  .subcategory-item {
+    flex: 1 1 100%; /* Full width for small screens */
+    max-width: 100%;
+  }
 }
 
 /* Styles for the swiper container */
@@ -318,18 +353,35 @@ body {
 
 /* Styles for the swiper wrapper */
 .swiper-wrapper {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;
+
   display: flex; /* Enables flex layout for slides */
   height: 100%; /* Full height of the swiper */
 }
 
 /* Styles for each swiper slide */
 .swiper-slide {
-  display: flex; /* Enables flex layout for slide content */
-  align-items: center; /* Centers content vertically */
-  justify-content: center; /* Centers content horizontally */
-  text-align: center; /* Centers text */
-  font-size: 18px; /* Sets font size for slide text */
-  background: #fff; /* Sets background color for slides */
+  width: 895px !important;
+  margin-right: 30px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
 /* Styles for images within slides */
@@ -418,4 +470,3 @@ body {
     grid-template-columns: 1fr; /* Switches submenu to 1 column */
   }
 }
-
