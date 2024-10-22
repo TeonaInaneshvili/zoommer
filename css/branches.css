@@ -1,0 +1,214 @@
+/* branches */
+main {
+    margin-top: 30px;
+    margin-bottom: 250px;
+}
+.components-div {
+    width: 100%;
+    max-width: 1200px;
+    font-size: 16px;
+    font-family: "FiraGo";
+    margin: 0px auto;
+    padding: 0px 15px;
+  }
+  .trade-po-content a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .components-h2 {
+    padding-bottom: 24px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--nav-bg-color);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--black-main);
+  }
+.branches {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+    max-width: 1170px;
+    width: 100%;
+    font-size: 16px;
+    font-family: "FiraGo";
+    margin: 0px auto;
+  }
+  .brenches-search {
+    width: 200px;
+  }
+  .brenches-search input {
+    border: none;
+    outline: none;
+    width: 90%;
+  }
+  /* City Selector Container */
+  .city-selector-container {
+    background: var(--white-400);
+    width: 260px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  /* City Selector Header */
+  .city-selector-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .city-selector-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: var(--black-06);
+    margin: 0;
+  }
+  
+  .arrow-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .rotated {
+    transform: rotate(180deg); 
+  }
+  .arrow-icon img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .city-list {
+    display: none; 
+    background-color: #fff;
+    padding: 10px;
+  }
+  
+  .city-list.active {
+    display: block;
+  }
+  
+  .city-option {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .city-list.active {
+    display: block;
+  }
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    width: 20px;
+  }
+  .brenches-contents {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding-right: 45px;
+  }
+  .branches-map {
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  /* Grid Container for Address Cards */
+  .address-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  /* Address Card Styles */
+  .address-card {
+    border-radius: 8px;
+    background: var(--nav-bg-color);
+    padding: 10px 20px;
+    width: 100%;
+    height: 110px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    transition: 0.2s;
+    border: 1px solid var(--white-400);
+  }
+  
+  .address-card:hover {
+    transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+  }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: end;
+  }
+  .city-name {
+    font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      color: var(--black-text);
+  }
+  .address-details {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--black-text);
+    opacity: 0.6;
+  }
+  .contact-number {
+    font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      color: var(--corp-color);
+  }
+  .working-hours {
+    font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      color: var(--black-text);
+      opacity: 0.8;
+  }
+  /* Responsive Styles */
+@media (max-width: 1023px) {
+  .address-card {
+      padding: 10px;
+      height: auto; /* Height adjusts based on content */
+  }
+  
+  .contact-info {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .working-hours {
+      text-align: left;
+  }
+
+  .address-grid {
+      grid-template-columns: 1fr; /* Stack the cards on smaller screens */
+  }
+}

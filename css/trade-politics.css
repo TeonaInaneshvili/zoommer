@@ -1,0 +1,40 @@
+/* trade politics */
+main {
+    font-family: 'firaGo';
+    line-height: 20px;
+}
+.components-div {
+    width: 100%;
+    max-width: 1170px;
+    font-size: 16px;
+    font-family: "FiraGo";
+    margin: 0px auto;
+    padding: 0px 15px;
+  }
+  .trade-po-content a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .components-h2 {
+    padding-bottom: 24px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--nav-bg-color);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--black-main);
+  }
+  .trade-po-content h3 {
+    text-align: center;
+    font-weight: 700;
+  }
+  .trade-po-content h4 {
+    color: rgb(103, 106, 108);
+    font-size: 10pt;
+    font-weight: 700;
+  }
+  .trade-po-content p,
+  li {
+    line-height: 20px;
+    font-weight: 500;
+  }  

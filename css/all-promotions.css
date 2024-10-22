@@ -1,0 +1,42 @@
+/* all promotions */
+.components-div {
+    width: 100%;
+    max-width: 1200px;
+    font-size: 16px;
+    font-family: "Firago";
+    margin: 40px auto;
+    padding: 0px 15px;
+  }
+  .trade-po-content a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .components-h2 {
+    padding-bottom: 24px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--nav-bg-color);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: var(--black-main);
+  }
+  .promotions-contents-div {
+    margin: 40px 0;
+  } 
+.promotions-contents-div a {
+    font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: var(--black-text);
+  }
+  .promotions-img-div {
+    margin-top: 20px;
+    position: relative;
+    max-width: 1170px;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .promotions-img-div img {
+    width: 100%
+  }
