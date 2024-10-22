@@ -66,36 +66,32 @@ headerSecondLine.classList.remove("scrolled");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener("click", function () {
   // Login pop-up functionality
   const loginButton = document.getElementById("header__log-in");
+  const loginButtonBottom = document.querySelector(".header__log-in-bottom");
   const logInPopUpContainer = document.querySelector(".log-in__pop-up-container");
   const popUp = document.getElementById("log-in__pop-up-main-part");
   const closeButton = document.querySelector(".log-in-popup-close");
   const overlay = document.querySelector(".overlay");
 
-  // Show the pop-up when the login button is clicked
+  // Function to show the pop-up
+  function showPopup(event) {
+    event.stopPropagation(); // Stop the click from propagating to other elements
+    if (popUp && logInPopUpContainer && overlay) {
+      popUp.style.display = "block"; // Show the pop-up
+      logInPopUpContainer.style.height = "100vh"; // Set height to 100vh
+      overlay.style.display = "block"; // Show the overlay
+    }
+  }
+
+  // Show the pop-up when either the top or bottom login button is clicked
   if (loginButton) {
-    loginButton.addEventListener("click", function (event) {
-      event.stopPropagation(); // Stop the click from propagating to other elements
-      if (popUp && logInPopUpContainer && overlay) {
-        popUp.style.display = "block"; // Show the pop-up
-        logInPopUpContainer.style.height = "100vh"; // Set height to 100vh
-        overlay.style.display = "block"; // Show the overlay
-      }
-    });
+    loginButton.addEventListener("click", showPopup);
+  }
+
+  if (loginButtonBottom) {
+    loginButtonBottom.addEventListener("click", showPopup);
   }
 
   // Close the pop-up when the close button is clicked
@@ -108,7 +104,6 @@ document.addEventListener("click", function () {
         logInPopUpContainer.style.height = "0"; // Reset height to 0
       }
     });
-
   }
 
   // Close the pop-up and overlay when the overlay itself is clicked
@@ -122,8 +117,6 @@ document.addEventListener("click", function () {
     });
   }
 });
-
-
 
 // Function to load HTML content into a specified element
 function loadHTML(filename, elementSelector) {
