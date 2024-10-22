@@ -38,10 +38,12 @@ async function ebiGenerateCategories() {
 
       // Dynamically create the Main Parent Category image and name
       ebiCategoryDiv.innerHTML = `
+      <a href="${ebiCategory.url}" target="_blank">
         <img src="${ebiCategory.iconUrl}" alt="${ebiCategory.name} Icon" />
         <h4>${ebiCategory.name}</h4>
-        <div class="subcategories-menu"></div> <!-- Placeholder for subcategories -->
-      `;
+      </a>
+      <div class="subcategories-menu"></div> <!-- Placeholder for subcategories -->
+    `;
 
       // Append the category to the container
       ebiCategoriesContainer.appendChild(ebiCategoryDiv);
@@ -146,16 +148,20 @@ function ebiDisplayParentAndSubcategories(ebiCategoryData, ebiCategoryKey) {
 
 // Function to display the image at the bottom left of the submenu
 function ebiDisplayBottomLeftImage(ebiCategoryData) {
+  // Get the specific .subcategories-menu for the hovered category
   const ebiSubcategoriesContainer = document.querySelector(
-    ".first__section-subcategories"
+    `.main-parent-category[data-category="${ebiCategoryData.name}"] .subcategories-menu`
   );
 
   // Check if the image URL exists
   if (ebiCategoryData.imageUrl) {
     // Create or select the image container element
-    let ebiImageContainer = document.querySelector(".submenu-bottom-image");
+    let ebiImageContainer = ebiSubcategoriesContainer.querySelector(
+      ".submenu-bottom-image"
+    );
 
     if (!ebiImageContainer) {
+      // Create .submenu-bottom-image div if it doesn't exist yet
       ebiImageContainer = document.createElement("div");
       ebiImageContainer.classList.add("submenu-bottom-image");
       ebiSubcategoriesContainer.appendChild(ebiImageContainer);
@@ -166,27 +172,6 @@ function ebiDisplayBottomLeftImage(ebiCategoryData) {
 
     // Style the image container to show up at the bottom left
     ebiImageContainer.style.display = "block";
-  }
-}
-
-// Modify the ebiHandleCategoryHover function to include the image display
-async function ebiHandleCategoryHover(ebiCategoryKey) {
-  const ebiAllCategoryData = await ebiFetchMenuData();
-
-  // Directly use categoryKey to find the relevant category in the JSON
-  const ebiCategoryData = ebiAllCategoryData.find(
-    (item) => item.name === ebiCategoryKey
-  );
-
-  // Hide any previously visible subcategories
-  ebiHideAllSubcategories();
-
-  // Display Parent Categories and Subcategories for the relevant Main Parent Category
-  if (ebiCategoryData && ebiCategoryData.childItems) {
-    ebiDisplayParentAndSubcategories(ebiCategoryData, ebiCategoryKey);
-
-    // Display the image at the bottom left corner
-    ebiDisplayBottomLeftImage(ebiCategoryData);
   }
 }
 
@@ -250,3 +235,4 @@ document.addEventListener("DOMContentLoaded", () => {
   ebiGenerateCategories(); // Generate categories
   ebiFetchAndGenerateSwiperSlides(); // Generate Swiper slides
 });
+
