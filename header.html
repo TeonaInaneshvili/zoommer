@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/shared.css" />
     <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/style.css" />
 
     <title>Document</title>
   </head>
@@ -94,7 +94,7 @@
 
                   <div class="header__Cart cart-container">
                     <div class="header__Cart-container flex">
-                      <img src="/assets/header-cart.svg" alt="cart icon" />
+                      <a href="cart.html"><img src="/assets/header-cart.svg" alt="cart icon" /></a>
                       <div class="header__Cart-name hide">
                         <a href="cart.html">კალათა</a>
                       </div>
@@ -127,7 +127,10 @@
                   </div>
 
                   <div class="header__log-in hide" id="header__log-in">
-                    <div class="header__log-in-container flex" id="header__log-in div">
+                    <div
+                      class="header__log-in-container flex"
+                      id="header__log-in div"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -151,27 +154,125 @@
                           d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10"
                         ></path>
                       </svg>
-                      <div class="header__log-in-name" >შესვლა</div>
+                      <div class="header__log-in-name">შესვლა</div>
                     </div>
                   </div>
 
-                  
+<div class="header__lang-change">
+    <div class="lang-change__geo-flag">
+        <img src="/assets/flag-geo.png" alt="geo flag img" class="flag-icon" />
+    </div>
 
-                  <div class="header__lang-change">
-                    <div class="lang-change__geo-flag">
-                      <img src="/assets/flag-geo.png" alt="geo flag img" />
-                    </div>
-                    <div class="header__lang-change-container mob-click">
-                      <a class="geo">GEO</a>
-                      <a class="eng">ENG</a>
-                    </div>
-                  </div>
+<div class="header__lang-change-container flex-column">
+  <div class="geo">GEO</div>
+  <div class="eng">ENG</div>
+</div>
+</div>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
       </nav>
+
+      <div class="overlay"></div>
+
+      <!-- log-in__pop-up-containe -->
+
+      <div class="log-in__pop-up-container" id="log-in__pop-up-container">
+        <div class="log-in__pop-up-mini-container">
+          <div
+            class="log-in__pop-up-main-part flex-column"
+            id="log-in__pop-up-main-part"
+          >
+            <img
+              src="./assets/mobile-modal-close.svg"
+              alt="close button"
+              class="log-in-popup-close"
+            />
+            <div class="pop-up-main-part__top-section flex">
+              <div class="pop-up-main-part__top-section-title">
+                <h4>ავტორიზაცია</h4>
+              </div>
+              <div class="underline underline-style flex"></div>
+              <div class="pop-up-main-part__top-section-title">
+                <h4>რეგისტრაცია</h4>
+              </div>
+            </div>
+            <div class="pop-up-main-part-bottom-section">
+              <div class="pop-up-main-part-bottom-container">
+                <div class="pop-up-main-part-choose flex">
+                  <div class="choose__phone">
+                    <h4>ნომრით ავტორიზაცია</h4>
+                  </div>
+                  <div class="choose__mail">
+                    <h4>მეილით ავტორიზაცია</h4>
+                  </div>
+                </div>
+
+                <div class="form-fields flex-column">
+                  <form class="form flex">
+                    <div class="choose__country-code flex">
+                      <img src="./assets/flag-geo.png" alt="Georgia flag img" />
+                      <span>+995</span>
+                    </div>
+
+                    <input
+                      type="number"
+                      placeholder="ტელეფონის ნომერი"
+                      class="input__mob-num"
+                    />
+                  </form>
+
+                  <button class="pop_up__login-btn flex">
+                    <h4 class="send-button">კოდის გამოგზავნა</h4>
+                  </button>
+                </div>
+
+                <div class="pop-up__login-last-part flex-column">
+                  <h4>ან გაიარე ავტორიზაცია სხვა მეთოდით</h4>
+                  <div class="google__acount">
+                    <a
+                      href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?client_id=744926430675-mq9cl9t8mcgdsmi1h8vsl9755h73tds5.apps.googleusercontent.com&scope=openid%20email%20profile&response_type=id_token&gsiwebsdk=gis_attributes&redirect_uri=https%3A%2F%2Fzoommer.ge&response_mode=form_post&origin=https%3A%2F%2Fzoommer.ge&display=popup&prompt=select_account&gis_params=ChJodHRwczovL3pvb21tZXIuZ2USEmh0dHBzOi8vem9vbW1lci5nZRgHKhZyS3k0eGRqaWtUa09jRVkzQml4Z2h3Mkg3NDQ5MjY0MzA2NzUtbXE5Y2w5dDhtY2dkc21pMWg4dnNsOTc1NWg3M3RkczUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb204AUJANzM4NWM4MmQ0YzVkOTI1ZmNiNTJlMDI4YTg5NmM1ZjM3NTU4NDVjZGFjODQ2NmQ5Y2E1NDE1YmEzYzVmOGNmMg&service=lso&o2v=1&ddm=0&flowName=GeneralOAuthFlow"
+                      rel="noopener"
+                    >
+                      <div class="svg-div">
+                        <svg
+                          class="google-acount-svg"
+                          xmlns="https://www.w3.org/2000/svg"
+                          width="20"
+                          height="24"
+                          viewBox="0 0 40 48"
+                          aria-hidden="true"
+                          jsname="jjf7Ff"
+                        >
+                          <path
+                            fill="#4285F4"
+                            d="M39.2 24.45c0-1.55-.16-3.04-.43-4.45H20v8h10.73c-.45 2.53-1.86 4.68-4 6.11v5.05h6.5c3.78-3.48 5.97-8.62 5.97-14.71z"
+                          ></path>
+                          <path
+                            fill="#34A853"
+                            d="M20 44c5.4 0 9.92-1.79 13.24-4.84l-6.5-5.05C24.95 35.3 22.67 36 20 36c-5.19 0-9.59-3.51-11.15-8.23h-6.7v5.2C5.43 39.51 12.18 44 20 44z"
+                          ></path>
+                          <path
+                            fill="#FABB05"
+                            d="M8.85 27.77c-.4-1.19-.62-2.46-.62-3.77s.22-2.58.62-3.77v-5.2h-6.7C.78 17.73 0 20.77 0 24s.78 6.27 2.14 8.97l6.71-5.2z"
+                          ></path>
+                          <path
+                            fill="#E94235"
+                            d="M20 12c2.93 0 5.55 1.01 7.62 2.98l5.76-5.76C29.92 5.98 25.39 4 20 4 12.18 4 5.43 8.49 2.14 15.03l6.7 5.2C10.41 15.51 14.81 12 20 12z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   </body>
 </html>
