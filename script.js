@@ -30,40 +30,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
-
-// Function to load HTML content into a specified element
-
 function loadHTML(filename, elementSelector) {
   fetch(filename)
-    .then(response => response.text())
-    .then(data => {
+    .then((response) => response.text())
+    .then((data) => {
       document.querySelector(elementSelector).innerHTML = data;
     })
-    .catch(error => console.log('Error loading file:', error));
+    .catch((error) => console.log("Error loading file:", error));
 }
 
-window.onscroll = function() {
-const headerTopPart = document.querySelector(".header__top-part");
-const headerSecondLine = document.getElementById("header__second-line");
+window.onscroll = function () {
+  const headerTopPart = document.querySelector(".header__top-part");
+  const headerSecondLine = document.getElementById("header__second-line");
 
-if (window.scrollY > 50) {
-headerTopPart.style.display = "none"; 
-headerSecondLine.classList.add("scrolled"); 
-} else {
-headerTopPart.style.display = "flex"; 
-headerSecondLine.classList.remove("scrolled"); 
-}
+  if (window.scrollY > 50) {
+    headerTopPart.style.display = "none";
+    headerSecondLine.classList.add("scrolled");
+  } else {
+    headerTopPart.style.display = "flex";
+    headerSecondLine.classList.remove("scrolled");
+  }
 };
-
-
 
 document.addEventListener("click", function () {
   // Login pop-up functionality
   const loginButton = document.getElementById("header__log-in");
-  const loginButtonBottom = document.querySelector(".header__log-in-bottom");
-  const logInPopUpContainer = document.querySelector(".log-in__pop-up-container");
+  const logInPopUpContainer = document.querySelector(
+    ".log-in__pop-up-container"
+  );
   const popUp = document.getElementById("log-in__pop-up-main-part");
   const closeButton = document.querySelector(".log-in-popup-close");
   const overlay = document.querySelector(".overlay");
@@ -399,7 +393,7 @@ function itemHtmlGenerator(item, sectionId) {
   }
   let addToResView = `onclick="addToRecentlyViewed(${item.id}, ${sectionId})"`;
 
-  itemHtml += `<div class="swiper-slide" >
+  itemHtml += `<div class="swiper-slide swiper-slide-custom-style" >
       <div id="product-${item.id}" class="mainCardbox">
        <div class="imgAndPricePart" ${sectionId ? addToResView : ""}>
         <img class="slider--img" src="${item.imageUrl}" alt="${item.name}" />
@@ -523,8 +517,6 @@ async function getDataFromZoommerApi() {
           newH1ForSwiper14,
           mySwiper14Container.firstChild
         );
-      } else {
-        console.error("Swiper container mySwiper14 not found");
       }
 
       if (section.products) {
