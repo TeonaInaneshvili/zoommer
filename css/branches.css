@@ -45,7 +45,7 @@ main {
   }
   /* City Selector Container */
   .city-selector-container {
-    background: var(--white-400);
+    background: var(--black-06);
     width: 260px;
     border: 1px solid #ddd;
     border-radius: 12px;
@@ -58,9 +58,14 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #fff;
+    background-color: var(--nav-bg-color);
     cursor: pointer;
-  }
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
   
   .city-selector-title {
     font-size: 14px;
@@ -196,7 +201,7 @@ main {
 @media (max-width: 1023px) {
   .address-card {
       padding: 10px;
-      height: auto; /* Height adjusts based on content */
+      height: 110px;
   }
   
   .contact-info {
@@ -211,4 +216,39 @@ main {
   .address-grid {
       grid-template-columns: 1fr; /* Stack the cards on smaller screens */
   }
+  .components-div {
+    width: 90%;
+    padding: 0 20px;
+  }
+  .tradeIn-content {
+    padding-right: 20px;
+  }
+  .components-h2 {
+    margin: 0;
+    border: none;
+  }
+  .brenches-search {
+    display: none;
+  }
+  .city-selector-container {
+    display: none;
+
+  }
+  .brenches-search-1023 {
+    padding: 10px;
+  }
+  .branches-map {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+.brenches-search-1023 input {
+  border: none;
+  outline: none;
+  width: 90%;
+}
 }

@@ -4,7 +4,7 @@ main {
     line-height: 20px;
 }
 .components-div {
-    width: 100%;
+    width: 95%;
     max-width: 1170px;
     font-size: 16px;
     font-family: "FiraGo";
@@ -41,4 +41,18 @@ main {
   .tradeIn-content span {
     color: var(--black-text);
     font-weight: 700;
+  }
+  @media (max-width: 1023px) {
+    .components-div {
+      width: 90%;
+      padding: 0 20px;
+    }
+    .tradeIn-content {
+      padding-right: 20px;
+    }
+    .components-h2 {
+      margin: 0;
+      border: none;
+    }
+
   }
