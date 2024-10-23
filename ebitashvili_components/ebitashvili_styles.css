@@ -230,14 +230,14 @@ body {
   /* gap: 30px; */
   padding: 20px;
 }
-#subcategories-container {
+#first__section-subcategories-container {
   position: relative; /* This makes the container a reference for absolute positioning */
 }
 
 /* Styles for the bottom-left image container */
 .submenu-bottom-image {
   display: none; /* Hides the container */
-  position: absolute; /* Position it relative to the #subcategories-container */
+  position: absolute; /* Position it relative to the #first__section-subcategories-container */
   bottom: 0;
   right: 0;
 }
@@ -352,7 +352,7 @@ body {
 }
 
 /* Styles for the swiper wrapper */
-.swiper-wrapper {
+.first__section-swiper-wrapper {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;
 
   display: flex; /* Enables flex layout for slides */
@@ -393,8 +393,8 @@ body {
 }
 
 /* Styles for arrow buttons */
-.swiper-button-next,
-.swiper-button-prev {
+.first__section-swiper-button-next,
+.first__section-swiper-button-prev {
   width: 40px !important; /* Fixed width for arrow buttons */
   height: 40px !important; /* Fixed height for arrow buttons */
   border-radius: 50%; /* Circular shape for buttons */
@@ -410,18 +410,18 @@ body {
 }
 
 /* Positions the next button */
-.swiper-button-next {
+.first__section-swiper-button-next {
   right: 10px; /* Positions next button to the right */
 }
 
 /* Positions the previous button */
-.swiper-button-prev {
+.first__section-swiper-button-prev {
   left: 10px; /* Positions previous button to the left */
 }
 
 /* Styles for arrow icons */
-.swiper-button-next::after,
-.swiper-button-prev::after {
+.first__section-swiper-button-next::after,
+.first__section-swiper-button-prev::after {
   font-size: 10px !important; /* Sets font size for arrow icons */
   color: black; /* Sets color for arrow icons */
 }
@@ -470,3 +470,4 @@ body {
     grid-template-columns: 1fr; /* Switches submenu to 1 column */
   }
 }
+
