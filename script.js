@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
   // Load header and footer HTML
   loadHTML("header.html", "header");
@@ -36,11 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
-
-
+// Function to load HTML content into a specified element
 
 function loadHTML(filename, elementSelector) {
   fetch(filename)
@@ -118,20 +111,6 @@ document.addEventListener("click", function () {
   }
 });
 
-// Function to load HTML content into a specified element
-function loadHTML(filename, elementSelector) {
-  fetch(filename)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.text();
-    })
-    .then((data) => {
-      document.querySelector(elementSelector).innerHTML = data;
-    })
-    .catch((error) => console.log("Error loading file:", error));
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   const allCategorySection = document.querySelector(
