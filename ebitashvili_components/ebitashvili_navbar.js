@@ -180,8 +180,8 @@ function ebiInitializeSwiper() {
   new Swiper(".swiper-container", {
     loop: false, // Make the Swiper NOT loop
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".first__section-swiper-button-next",
+      prevEl: ".first__section-swiper-button-prev",
     },
     slidesPerView: 1, // Show one slide at a time
   });
@@ -189,7 +189,9 @@ function ebiInitializeSwiper() {
 
 // Function to fetch and generate Swiper slides dynamically
 async function ebiFetchAndGenerateSwiperSlides() {
-  const ebiSwiperWrapper = document.querySelector(".swiper-wrapper");
+  const ebiSwiperWrapper = document.querySelector(
+    ".first__section-swiper-wrapper"
+  );
   try {
     // Fetch the entire JSON array
     const ebiDataArray = await ebiFetchSwiperData();
@@ -235,4 +237,5 @@ document.addEventListener("DOMContentLoaded", () => {
   ebiGenerateCategories(); // Generate categories
   ebiFetchAndGenerateSwiperSlides(); // Generate Swiper slides
 });
+
 
