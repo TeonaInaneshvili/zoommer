@@ -530,7 +530,7 @@ async function getDataFromZoommerApi() {
 
       if (section.brands) {
         for (let item of section.brands) {
-          let slideContent = `<div class="swiper-slide swiperSlide5"><img src="${item.imageUrl}" class="brand--img" alt="Brand Image"></div>`;
+          let slideContent = `<div class="swiper-slide swiper-slide-custom-style swiperSlide5"><img src="${item.imageUrl}" class="brand--img" alt="Brand Image"></div>`;
           swiperObject["swiper" + itemIndex].appendSlide(slideContent);
         }
         itemIndex++;
