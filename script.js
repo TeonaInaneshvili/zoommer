@@ -55,9 +55,8 @@ window.onscroll = function () {
 document.addEventListener("click", function () {
   // Login pop-up functionality
   const loginButton = document.getElementById("header__log-in");
-  const logInPopUpContainer = document.querySelector(
-    ".log-in__pop-up-container"
-  );
+  const loginButtonBottom = document.querySelector(".header__log-in-bottom");
+  const logInPopUpContainer = document.querySelector(".log-in__pop-up-container");
   const popUp = document.getElementById("log-in__pop-up-main-part");
   const closeButton = document.querySelector(".log-in-popup-close");
   const overlay = document.querySelector(".overlay");
@@ -104,6 +103,7 @@ document.addEventListener("click", function () {
     });
   }
 });
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
