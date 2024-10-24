@@ -94,9 +94,10 @@ body {
   border-bottom: 1px solid #f2f2f2;
   height: 43px;
 }
-.last-anchor-class{
+.first__section-categories > .main-parent-category:last-child a {
   border-bottom: none;
 }
+
 /* Changes link color on hover, visited, or active */
 .main-parent-category a:hover,
 .main-parent-category a:visited,
