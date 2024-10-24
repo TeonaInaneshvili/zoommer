@@ -38,18 +38,17 @@ async function ebiGenerateCategories() {
 
       // Dynamically create the Main Parent Category image and name
       ebiCategoryDiv.innerHTML = `
-      <a href="${ebiCategory.url}" target="_blank">
+      <a href="${ebiCategory.url}" target="_blank" class="a-tag-underline">
         <img src="${ebiCategory.iconUrl}" alt="${ebiCategory.name} Icon" />
         <h4>${ebiCategory.name}</h4>
       </a>
-      <div class="subcategories-menu"></div> <!-- Placeholder for subcategories -->
-    `;
+      <div class="subcategories-menu"></div> <!-- Placeholder for subcategories -->`
+    ;
 
       // Append the category to the container
       ebiCategoriesContainer.appendChild(ebiCategoryDiv);
     }
   });
-
   // Add hover events after generating categories
   ebiAttachHoverEvents();
 }
@@ -60,13 +59,30 @@ function ebiAttachHoverEvents() {
     ".main-parent-category"
   );
   ebiCategoryElements.forEach((ebiCategoryElement) => {
-    ebiCategoryElement.addEventListener("mouseenter", (event) => {
+    ebiCategoryElement.addEventListener("mouseenter", async (event) => {
       const ebiCategoryKey = event.currentTarget.getAttribute("data-category");
-      ebiHandleCategoryHover(ebiCategoryKey);
+      await ebiHandleCategoryHover(ebiCategoryKey);
+
+      // Get the subcategories menu and its height
+      const ebiSubcategoriesMenu = event.currentTarget.querySelector(".subcategories-menu");
+
+      // Ensure that the subcategories-menu is visible before measuring its height
+      if (ebiSubcategoriesMenu) {
+        ebiSubcategoriesMenu.style.display = "flex"; // Temporarily display to get the height
+        const subcategoriesHeight = ebiSubcategoriesMenu.offsetHeight;
+
+        // Set the height of .first__section-categories to match the subcategories height
+        const ebiCategoriesContainer = document.querySelector(".first__section-categories");
+        ebiCategoriesContainer.style.height = `${subcategoriesHeight}px`;
+      }
     });
 
     ebiCategoryElement.addEventListener("mouseleave", () => {
       ebiHideAllSubcategories();
+
+      // Reset the height of .first__section-categories after hover ends
+      const ebiCategoriesContainer = document.querySelector(".first__section-categories");
+      ebiCategoriesContainer.style.height = ''; // Reset to original height
     });
   });
 }
@@ -175,14 +191,26 @@ function ebiDisplayBottomLeftImage(ebiCategoryData) {
   }
 }
 
-// Function to initialize Swiper
+
+
 function ebiInitializeSwiper() {
-  new Swiper(".swiper-container", {
+  new Swiper(".swiper-container-m", {
+    spaceBetween: 30,
     slidesPerView: 1,
+    centeredSlides: true,
+    speed: 800, // Set the speed to 1000ms (1 second). You can increase this for slower transitions.
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
     direction: getDirection(),
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next-m",
+      prevEl: ".swiper-button-prev-m",
     },
     watchOverflow: true,
     on: {
@@ -190,14 +218,19 @@ function ebiInitializeSwiper() {
         this.changeDirection(getDirection());
       },
     },
-  })
+  });
 }
+
+
+
+
 
 
 function getDirection() {
   return (window.innerWidth = "horizontal");
 }
  
+
 
 
 
@@ -226,8 +259,55 @@ async function ebiFetchAndGenerateSwiperSlides() {
     // Generate slides using each banner in the banners array
     ebiAllSwiperData.forEach((ebiBanner) => {
       const ebiSwiperSlide = document.createElement("div");
+      ebiSwiperSlide.classList.add("swiper-slide");
       ebiSwiperSlide.classList.add("swiper-slide-m");
+      // Create slide content using the banner properties
+      ebiSwiperSlide.innerHTML = `
+        <img src="${ebiBanner.webImageUrl}" alt="${ebiBanner.title}">
+      `;
 
+      // Append slide to Swiper wrapper
+      ebiSwiperWrapper.appendChild(ebiSwiperSlide);
+    });
+
+    // Initialize Swiper once slides are ready
+    ebiInitializeSwiper();
+
+    // Add dynamic transform logic
+    ebiAddSwiperDynamicTransform();
+
+  } catch (error) {
+    console.error("Failed to fetch swiper data:", error);
+  }
+}
+
+// Function to fetch and generate Swiper slides dynamically
+async function ebiFetchAndGenerateSwiperSlides() {
+  const ebiSwiperWrapper = document.querySelector(".swiper-wrapper-m");
+  try {
+    // Fetch the entire JSON array
+    const ebiDataArray = await ebiFetchSwiperData();
+
+    // Since the JSON data is now an array, access the first object
+    const ebiData = ebiDataArray[0];
+
+    // Extract the banners array from the JSON object
+    const ebiAllSwiperData = ebiData.banners;
+
+    // Check if the data exists
+    if (!ebiAllSwiperData) {
+      console.error("No banners found in the JSON data.");
+      return;
+    }
+
+    // Clear existing slides
+    ebiSwiperWrapper.innerHTML = "";
+
+    // Generate slides using each banner in the banners array
+    ebiAllSwiperData.forEach((ebiBanner) => {
+      const ebiSwiperSlide = document.createElement("div");
+      ebiSwiperSlide.classList.add("swiper-slide");
+      ebiSwiperSlide.classList.add("swiper-slide-m");
       // Create slide content using the banner properties
       ebiSwiperSlide.innerHTML = `
     <img src="${ebiBanner.webImageUrl}" alt="${ebiBanner.title}">
@@ -244,7 +324,7 @@ async function ebiFetchAndGenerateSwiperSlides() {
   }
 }
 
-// Initialize the category generation and Swiper when the page loads
+
 document.addEventListener("DOMContentLoaded", () => {
   ebiGenerateCategories(); // Generate categories
   ebiFetchAndGenerateSwiperSlides(); // Generate Swiper slides
