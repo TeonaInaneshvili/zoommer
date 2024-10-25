@@ -128,39 +128,39 @@ function chosenLanguage(lang) {
   document.getElementById("language_option").classList.remove("visible");
 }
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const allCategorySection = document.querySelector(
-//     ".all-category__section-columns"
-//   );
+document.addEventListener("DOMContentLoaded", () => {
+  const allCategorySection = document.querySelector(
+    ".all-category__section-columns"
+  );
 
-//   // Fetch the JSON data from the file
-//   fetch("all-category.json")
-//     .then((response) => response.json())
-//     .then((categories) => {
-//       // Process and display the data
-//       categories.forEach((category) => {
-//         const categoryDiv = document.createElement("div");
-//         categoryDiv.classList.add("category-item");
+  // Fetch the JSON data from the file
+  fetch("all-category.json")
+    .then((response) => response.json())
+    .then((categories) => {
+      // Process and display the data
+      categories.forEach((category) => {
+        const categoryDiv = document.createElement("div");
+        categoryDiv.classList.add("category-item");
 
-//         const title = document.createElement("h3");
-//         title.textContent = category.name;
+        const title = document.createElement("h3");
+        title.textContent = category.name;
 
-//         const childList = document.createElement("ul");
-//         category.childCategories.forEach((child) => {
-//           const childItem = document.createElement("li");
-//           childItem.textContent = child.name;
-//           childList.appendChild(childItem);
-//         });
+        const childList = document.createElement("ul");
+        category.childCategories.forEach((child) => {
+          const childItem = document.createElement("li");
+          childItem.textContent = child.name;
+          childList.appendChild(childItem);
+        });
 
-//         categoryDiv.appendChild(title);
-//         categoryDiv.appendChild(childList);
-//         allCategorySection.appendChild(categoryDiv);
-//       });
-//     })
-//     .catch((error) => {
-//       console.error("Error fetching the categories:", error);
-//     });
-// });
+        categoryDiv.appendChild(title);
+        categoryDiv.appendChild(childList);
+        allCategorySection.appendChild(categoryDiv);
+      });
+    })
+    .catch((error) => {
+      console.error("Error fetching the categories:", error);
+    });
+});
 
 let zoomerApiData = "";
 let swiperObject = {
