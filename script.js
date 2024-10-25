@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
   // Load header and footer HTML
   loadHTML("header.html", "header");
@@ -33,38 +30,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
-
-
-
-
-
-
-
 function loadHTML(filename, elementSelector) {
   fetch(filename)
-    .then(response => response.text())
-    .then(data => {
+    .then((response) => response.text())
+    .then((data) => {
       document.querySelector(elementSelector).innerHTML = data;
     })
-    .catch(error => console.log('Error loading file:', error));
+    .catch((error) => console.log("Error loading file:", error));
 }
 
-window.onscroll = function() {
-const headerTopPart = document.querySelector(".header__top-part");
-const headerSecondLine = document.getElementById("header__second-line");
+window.onscroll = function () {
+  const headerTopPart = document.querySelector(".header__top-part");
+  const headerSecondLine = document.getElementById("header__second-line");
 
-if (window.scrollY > 50) {
-headerTopPart.style.display = "none"; 
-headerSecondLine.classList.add("scrolled"); 
-} else {
-headerTopPart.style.display = "flex"; 
-headerSecondLine.classList.remove("scrolled"); 
-}
+  if (window.scrollY > 50) {
+    headerTopPart.style.display = "none";
+    headerSecondLine.classList.add("scrolled");
+  } else {
+    headerTopPart.style.display = "flex";
+    headerSecondLine.classList.remove("scrolled");
+  }
 };
-
-
 
 document.addEventListener("click", function () {
   // Login pop-up functionality
@@ -118,20 +104,33 @@ document.addEventListener("click", function () {
   }
 });
 
-// Function to load HTML content into a specified element
-function loadHTML(filename, elementSelector) {
-  fetch(filename)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.text();
-    })
-    .then((data) => {
-      document.querySelector(elementSelector).innerHTML = data;
-    })
-    .catch((error) => console.log("Error loading file:", error));
+
+
+
+// Function to toggle the visibility of the language options
+function changeLanguage() {
+  const languageOption = document.getElementById('language_option');
+  
+  // Toggle the class to show or hide language options
+  languageOption.classList.toggle('visible');
 }
+
+// Function to change the selected language and update the flag
+function chosenLanguage(lang) {
+  const flagImg = document.getElementById('flag');
+  const geoFlag = "./assets/flag-geo.png"; 
+  const usFlag = "./assets/en.svg"; 
+
+  if (lang === 'geo') {
+    flagImg.src = geoFlag;
+  } else if (lang === 'eng') {
+    flagImg.src = usFlag;
+  }
+  
+  document.getElementById('language_option').classList.remove('visible');
+}
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const allCategorySection = document.querySelector(
@@ -420,7 +419,7 @@ function itemHtmlGenerator(item, sectionId) {
   }
   let addToResView = `onclick="addToRecentlyViewed(${item.id}, ${sectionId})"`;
 
-  itemHtml += `<div class="swiper-slide" >
+  itemHtml += `<div class="swiper-slide swiper-slide-custom-style" >
       <div id="product-${item.id}" class="mainCardbox">
        <div class="imgAndPricePart" ${sectionId ? addToResView : ""}>
         <img class="slider--img" src="${item.imageUrl}" alt="${item.name}" />
@@ -544,8 +543,6 @@ async function getDataFromZoommerApi() {
           newH1ForSwiper14,
           mySwiper14Container.firstChild
         );
-      } else {
-        console.error("Swiper container mySwiper14 not found");
       }
 
       if (section.products) {
@@ -559,7 +556,7 @@ async function getDataFromZoommerApi() {
 
       if (section.brands) {
         for (let item of section.brands) {
-          let slideContent = `<div class="swiper-slide swiperSlide5"><img src="${item.imageUrl}" class="brand--img" alt="Brand Image"></div>`;
+          let slideContent = `<div class="swiper-slide swiper-slide-custom-style swiperSlide5"><img src="${item.imageUrl}" class="brand--img" alt="Brand Image"></div>`;
           swiperObject["swiper" + itemIndex].appendSlide(slideContent);
         }
         itemIndex++;

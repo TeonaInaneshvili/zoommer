@@ -7,22 +7,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Oxygen:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oxygen:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
+
 @font-face {
-  font-family: "Firago";
-  src: url(./fonts/FiraGO-Regular.otf);
-  font-weight: 300;
+  font-family: 'FiraGO';
+  src: url('/fonts/FiraGO-Regular.otf') format('opentype');
 }
 
 @font-face {
-  font-family: "FiraGO";
-  src: url("/css/fonts/FiraGO-Regular.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
 }
 
-body {
-  font-family: "FiraGO", sans-serif;
+
+@font-face {
+  font-family: 'Oxygen';
+  src: url('/fonts/Oxygen-Regular.ttf') format('truetype');
 }
+
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('/fonts/FiraSans-Regular.ttf') format('truetype');
+}
+
 
 /* ფერები */
 :root {
