@@ -1,7 +1,7 @@
 /* installment */
 .components-div {
-    width: 100%;
-    max-width: 1200px;
+    width: 95%;
+    max-width: 1170px;
     font-size: 16px;
     font-family: Arial, sans-serif;
     margin: 0px auto;
@@ -55,6 +55,7 @@
     justify-content: center;
   }
   .installment-content-img-div img {
+    overflow: hidden;
     width: 602px;
   }
   
@@ -78,4 +79,18 @@
     background-color: transparent;
     vertical-align: baseline;
     text-wrap: wrap;
+  }
+  @media (max-width: 1023px) {
+    .components-div {
+      margin: 0 auto;
+      width: 95%;
+      padding: 0;
+    }
+    .components-h2 {
+      margin: 0;
+      border: none;
+    }
+    .installment-content {
+      padding: 0;
+    }
   }

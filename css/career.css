@@ -82,6 +82,25 @@ main {
   .career-list li {
     list-style-type: disc;
     font-size: 11pt;
-  
   }
- 
+  @media (max-width: 1023px) {
+    .components-div {
+      width: 90%;
+      margin: 0;
+      padding: 0 20px;
+    }
+    .components-h2 {
+      margin: 0;
+      border: none;
+    }
+
+    .career-content-img {
+      padding-right: 20px;
+      width: 232.967px !important;
+    float: right;
+    height: 232.967px;
+    }
+    .career-content-img img {
+      width: 232.967px !important;
+    }
+  }

@@ -1,11 +1,10 @@
 /* all promotions */
 .components-div {
-    width: 100%;
-    max-width: 1200px;
+    width: 95%;
+    max-width: 1170px;
     font-size: 16px;
     font-family: "Firago";
     margin: 40px auto;
-    padding: 0px 15px;
   }
   .trade-po-content a {
     color: inherit;
