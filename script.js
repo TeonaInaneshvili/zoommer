@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 function loadHTML(filename, elementSelector) {
   fetch(filename)
     .then((response) => response.text())
@@ -56,7 +55,9 @@ document.addEventListener("click", function () {
   // Login pop-up functionality
   const loginButton = document.getElementById("header__log-in");
   const loginButtonBottom = document.querySelector(".header__log-in-bottom");
-  const logInPopUpContainer = document.querySelector(".log-in__pop-up-container");
+  const logInPopUpContainer = document.querySelector(
+    ".log-in__pop-up-container"
+  );
   const popUp = document.getElementById("log-in__pop-up-main-part");
   const closeButton = document.querySelector(".log-in-popup-close");
   const overlay = document.querySelector(".overlay");
@@ -104,67 +105,62 @@ document.addEventListener("click", function () {
   }
 });
 
-
-
-
 // Function to toggle the visibility of the language options
 function changeLanguage() {
-  const languageOption = document.getElementById('language_option');
-  
+  const languageOption = document.getElementById("language_option");
+
   // Toggle the class to show or hide language options
-  languageOption.classList.toggle('visible');
+  languageOption.classList.toggle("visible");
 }
 
 // Function to change the selected language and update the flag
 function chosenLanguage(lang) {
-  const flagImg = document.getElementById('flag');
-  const geoFlag = "./assets/flag-geo.png"; 
-  const usFlag = "./assets/en.svg"; 
+  const flagImg = document.getElementById("flag");
+  const geoFlag = "./assets/flag-geo.png";
+  const usFlag = "./assets/en.svg";
 
-  if (lang === 'geo') {
+  if (lang === "geo") {
     flagImg.src = geoFlag;
-  } else if (lang === 'eng') {
+  } else if (lang === "eng") {
     flagImg.src = usFlag;
   }
-  
-  document.getElementById('language_option').classList.remove('visible');
+
+  document.getElementById("language_option").classList.remove("visible");
 }
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   const allCategorySection = document.querySelector(
+//     ".all-category__section-columns"
+//   );
 
+//   // Fetch the JSON data from the file
+//   fetch("all-category.json")
+//     .then((response) => response.json())
+//     .then((categories) => {
+//       // Process and display the data
+//       categories.forEach((category) => {
+//         const categoryDiv = document.createElement("div");
+//         categoryDiv.classList.add("category-item");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const allCategorySection = document.querySelector(
-    ".all-category__section-columns"
-  );
+//         const title = document.createElement("h3");
+//         title.textContent = category.name;
 
-  // Fetch the JSON data from the file
-  fetch("all-category.json")
-    .then((response) => response.json())
-    .then((categories) => {
-      // Process and display the data
-      categories.forEach((category) => {
-        const categoryDiv = document.createElement("div");
-        categoryDiv.classList.add("category-item");
+//         const childList = document.createElement("ul");
+//         category.childCategories.forEach((child) => {
+//           const childItem = document.createElement("li");
+//           childItem.textContent = child.name;
+//           childList.appendChild(childItem);
+//         });
 
-        const title = document.createElement("h3");
-        title.textContent = category.name;
-
-        const childList = document.createElement("ul");
-        category.childCategories.forEach((child) => {
-          const childItem = document.createElement("li");
-          childItem.textContent = child.name;
-          childList.appendChild(childItem);
-        });
-
-        categoryDiv.appendChild(title);
-        categoryDiv.appendChild(childList);
-        allCategorySection.appendChild(categoryDiv);
-      });
-    })
-    .catch((error) => {
-      console.error("Error fetching the categories:", error);
-    });
-});
+//         categoryDiv.appendChild(title);
+//         categoryDiv.appendChild(childList);
+//         allCategorySection.appendChild(categoryDiv);
+//       });
+//     })
+//     .catch((error) => {
+//       console.error("Error fetching the categories:", error);
+//     });
+// });
 
 let zoomerApiData = "";
 let swiperObject = {

@@ -495,6 +495,8 @@ header {
   width: 304px;
   border: none;
   font-weight: 500;
+  border: none;
+  outline: none;
 }
 .input__mob-num::placeholder {
   font-weight: 600;
@@ -619,7 +621,8 @@ header {
   color: #000000ba;
   font-size: 16px;
   font-family: "FiraGO", "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI,
-    "Oxygen", Ubuntu, Cantarell, "Fira Sans", Droid Sans, Helvetica Neue, sans-serif;
+    "Oxygen", Ubuntu, Cantarell, "Fira Sans", Droid Sans, Helvetica Neue,
+    sans-serif;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -862,12 +865,34 @@ header {
   .bottom__fixed-header-btn:hover .category-logo-svg path {
     fill: var(--corp-color);
   }
-}
-
-.orange-sales {
-  display: flex;
-  justify-content: flex-end;
-}
+  .orange-sales {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .log-in__pop-up-mini-container {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    top: 18%;
+    padding-bottom: 2%;
+  }
+  .log-in__pop-up-main-part,
+  .form-fields,
+  .input__mob-num,
+  .pop_up__login-btn, 
+  .google__acount
+  {
+    width: 100%;
+  }
+  .bottom__fixed-header {
+    z-index: 1000;
+  }
+  .log-in-popup-close {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    z-index: 9;
+}}
 
 @media screen and (max-width: 780px) {
   .bottom__mainPart-right {
@@ -902,4 +927,11 @@ header {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
+  .log-in__pop-up-mini-container {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    top: 12%;
+    padding-bottom: 14%;
+}
 }
