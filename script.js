@@ -106,6 +106,32 @@ document.addEventListener("click", function () {
 
 
 
+
+// Function to toggle the visibility of the language options
+function changeLanguage() {
+  const languageOption = document.getElementById('language_option');
+  
+  // Toggle the class to show or hide language options
+  languageOption.classList.toggle('visible');
+}
+
+// Function to change the selected language and update the flag
+function chosenLanguage(lang) {
+  const flagImg = document.getElementById('flag');
+  const geoFlag = "./assets/flag-geo.png"; 
+  const usFlag = "./assets/en.svg"; 
+
+  if (lang === 'geo') {
+    flagImg.src = geoFlag;
+  } else if (lang === 'eng') {
+    flagImg.src = usFlag;
+  }
+  
+  document.getElementById('language_option').classList.remove('visible');
+}
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const allCategorySection = document.querySelector(
     ".all-category__section-columns"

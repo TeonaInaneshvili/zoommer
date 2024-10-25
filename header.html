@@ -163,20 +163,21 @@
                     </div>
                   </div>
 
-                  <div class="header__lang-change">
-                    <div class="lang-change__geo-flag">
-                      <img
-                        src="/assets/flag-geo.png"
-                        alt="geo flag img"
-                        class="flag-icon"
-                      />
-                    </div>
 
-                    <div class="header__lang-change-container flex-column">
-                      <div class="geo">GEO</div>
-                      <div class="eng">ENG</div>
+
+
+                  <div class="header__lang-change" onclick="changeLanguage()">
+                    <div class="lang-change__geo-flag">
+                      <img id="flag" src="./assets/flag-geo.png" alt="flag of Georgia" class="flag-icon" />
+                    </div>
+                  
+                    <div id="language_option" class="header__lang-change-container flex-column">
+                      <div class="geo lang-option" id="geo" onclick="chosenLanguage('geo')">GEO</div>
+                      <div class="eng lang-option" id="eng" onclick="chosenLanguage('eng')">ENG</div>
                     </div>
                   </div>
+                  
+                  
                 </div>
               </div>
             </div>

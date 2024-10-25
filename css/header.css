@@ -607,19 +607,39 @@ header {
   border-radius: 12px;
   filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 7px);
   cursor: pointer;
+  font-size: 16px;
+  font-family: "FiraGo";
 }
 .geo,
 .eng {
-  padding-block: 7px;
+  padding: 7px 0;
   text-align: center;
   background-color: var(--white-text);
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.6);
-  letter-spacing: 0.02rem;
+  color: #000000ba;
+  font-size: 16px;
+  font-family: "FiraGO", "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI,
+    "Oxygen", Ubuntu, Cantarell, "Fira Sans", Droid Sans, Helvetica Neue, sans-serif;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 33px;
 }
 
-.header__lang-change:hover .header__lang-change-container {
-  display: block;
+.lang-option {
+  text-align: center;
+  cursor: pointer;
+  z-index: 100000;
+}
+.geo:hover,
+.eng:hover {
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
+
+.header__lang-change-container.visible {
+  display: flex;
+  z-index: 1000000;
 }
 
 .header__Cart-name,
@@ -842,8 +862,6 @@ header {
   .bottom__fixed-header-btn:hover .category-logo-svg path {
     fill: var(--corp-color);
   }
-
-
 }
 
 .orange-sales {

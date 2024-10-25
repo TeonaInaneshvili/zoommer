@@ -4,7 +4,7 @@
 
 body {
   height: 100%;
-  font-family: "firago", sans-serif;
+  font-family: "FiraGo", sans-serif;
   font-size: var(--font-size-small);
   color: var(--black-text);
   background-color: var(--white-bachkround);
