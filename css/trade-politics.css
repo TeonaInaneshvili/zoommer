@@ -4,7 +4,7 @@ main {
     line-height: 20px;
 }
 .components-div {
-    width: 100%;
+    width: 95%;
     max-width: 1170px;
     font-size: 16px;
     font-family: "FiraGo";
@@ -41,10 +41,12 @@ main {
   }  
   @media (max-width: 1023px) {
     .components-div {
-      padding: 0 20px;
+      margin: 0 auto;
+      width: 95%;
+      padding: 0;
     }
     .trade-po-content {
-      padding-right: 20px;
+      padding: 0;
     }
     .components-h2 {
       margin: 0;
