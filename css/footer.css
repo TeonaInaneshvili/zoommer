@@ -1,11 +1,14 @@
 footer {
-  font-family: "Firago";
+  font-family: "FiraGO";
   background-color: var(--footer-bg-color);
   padding: 10px 0;
 }
 footer a {
   color: var(--black-text);
-  font-family: "Firago";
+  font-family: "FiraGO";
+  display: flex;
+  white-space: nowrap;
+  font-size: 10px;
 }
 
 .footer-row {
@@ -14,7 +17,7 @@ footer a {
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
-  gap: 20px;
+  gap: 120px;
 }
 
 .conteiner,
@@ -24,6 +27,7 @@ footer a {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: fit-content;
 }
 
 .footer-copyright {
@@ -36,6 +40,9 @@ footer a {
 }
 
 .footer h4 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--light-black);
   border-bottom: 1px solid var(--corp-color);
   padding-bottom: 15px;
   margin-bottom: 5px;
@@ -44,17 +51,24 @@ footer a {
 .social a,
 .contacts a {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
 @media (max-width: 1023px) {
   .footer-row {
-    grid-template-columns: repeat(2, 40%);
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     gap: 20px;
   }
+  .conteiner,
+  .social,
+  .contacts {
+    line-height: 20px;
+    white-space: wrap;
 }
-
+}
 @media (max-width: 290px) {
   .footer-row {
     font-size: 10px;

@@ -4,7 +4,7 @@ main {
   width: 95%;
   margin: 0 auto;
   margin-top: 30px;
-  margin-bottom: 250px;
+  margin-bottom: 50px;
 }
 .components-div {
     font-size: 16px;
@@ -35,10 +35,17 @@ main {
     font-family: "FiraGo";
     margin: 0px auto;
   }
-  .brenches-search {
-    width: 200px;
+  .branche-search {
+    display: flex;
+    gap: 15px;
+    width: 260px;
+    height: 50px;
+    background: var(--white-text);
+    border: 1px solid var(--corp-color);
+    border-radius: 12px;
+    padding: 15px 22px;
   }
-  .brenches-search input {
+  .branche-search-input {
     border: none;
     outline: none;
     width: 90%;
@@ -47,6 +54,7 @@ main {
   .city-selector-container {
     background: var(--black-06);
     width: 260px;
+    height: 50px;
     border: 1px solid #ddd;
     border-radius: 12px;
     overflow: hidden;
@@ -54,10 +62,12 @@ main {
   
   /* City Selector Header */
   .city-selector-header {
+    width: 260px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 16px;
     background-color: var(--nav-bg-color);
     cursor: pointer;
     border-radius: 12px;
@@ -71,20 +81,17 @@ main {
     font-size: 14px;
     font-weight: 500;
     line-height: 17px;
-    color: var(--black-06);
+    color: #000006;
+    opacity: 0.6;
     margin: 0;
   }
-  
-  .arrow-icon {
-    transition: transform 0.3s ease;
-  }
-  
-  .rotated {
-    transform: rotate(180deg); 
-  }
+.arrow-icon {
+  display: flex;
+  justify-content: flex-end;
+}
   .arrow-icon img {
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 19px;
   }
   
   .city-list {
@@ -114,13 +121,22 @@ main {
     cursor: pointer;
     width: 20px;
   }
+
   .brenches-contents {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 20px;
     padding-right: 45px;
   }
+  .checkbox-container img {
+    width: 20px;
+  }
+ .checkbox-container label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--light-black);
+ }
   .branches-map {
     max-width: 1170px;
     width: 100%;
@@ -136,7 +152,6 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
-    padding: 20px;
     margin: 0 auto;
     max-width: 1200px;
   }
@@ -150,13 +165,40 @@ main {
     height: 110px;
     cursor: pointer;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: stretch;
     transition: 0.2s;
     border: 1px solid var(--white-400);
   }
-  
+  .address-card-firstLine {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .adress-street {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 16px;
+  }
+  .adress-street p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--light-black);
+    opacity: 0.8;
+
+  }
+.working-hours {
+  display: flex;
+  flex-direction: column;
+}
+.working-hours p {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
   .address-card:hover {
     transform: scale(1.01);
     -webkit-transform: scale(1.01);
@@ -178,11 +220,12 @@ main {
       color: var(--black-text);
   }
   .address-details {
+    font-family: 'FiraGO';
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    color: var(--black-text);
-    opacity: 0.6;
+    color: var(--light-black);
+    opacity: 0.8;
   }
   .contact-number {
     font-weight: 600;
@@ -196,6 +239,12 @@ main {
       line-height: 14px;
       color: var(--black-text);
       opacity: 0.8;
+  }
+  .brenches-search-1023 {
+    display: none;
+  }
+  .city-selector-container-1023 {
+    display: none;
   }
   /* Responsive Styles */
 @media (max-width: 1023px) {

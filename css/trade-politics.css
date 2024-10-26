@@ -1,15 +1,16 @@
 /* trade politics */
 main {
-    font-family: 'firaGo';
+  font-family: "FiraGO";
     line-height: 20px;
 }
 .components-div {
     width: 95%;
     max-width: 1170px;
     font-size: 16px;
-    font-family: "FiraGo";
+    font-family: "FiraGO";
     margin: 0px auto;
     padding: 0px 15px;
+    color: var(--black-main)
   }
   .trade-po-content a {
     color: inherit;
@@ -28,6 +29,7 @@ main {
   .trade-po-content h3 {
     text-align: center;
     font-weight: 700;
+    margin-bottom: 30px;
   }
   .trade-po-content h4 {
     color: rgb(103, 106, 108);
@@ -36,9 +38,14 @@ main {
   }
   .trade-po-content p,
   li {
+    font-family: "FiraGo";
+    font-size: var(--font-size-large);
     line-height: 20px;
-    font-weight: 500;
-  }  
+    font-weight: 100;
+  } 
+  .trade-po-content p>li {
+    font-weight: 300;
+  } 
   @media (max-width: 1023px) {
     .components-div {
       margin: 0 auto;

@@ -3,7 +3,7 @@
     width: 95%;
     max-width: 1170px;
     font-size: 16px;
-    font-family: "Firago";
+    font-family: "FiraGO";
     margin: 40px auto;
   }
   .trade-po-content a {
@@ -11,10 +11,11 @@
     text-decoration: none;
   }
   .components-h2 {
+    font-family: 'FiraGO';
     padding-bottom: 24px;
     margin-bottom: 30px;
     border-bottom: 2px solid var(--nav-bg-color);
-    font-weight: 700;
+    font-weight: 900;
     font-size: 24px;
     line-height: 24px;
     color: var(--black-main);

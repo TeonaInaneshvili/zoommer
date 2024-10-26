@@ -12,13 +12,22 @@
   font-family: 'FiraGO';
   src: url('/fonts/FiraGO-Regular.otf') format('opentype');
 }
-
+@font-face {
+  font-family: 'FiraGO-madium';
+  src: url('/fonts/FiraGO-Medium.otf') format('opentype');
+}
+@font-face {
+  font-family: 'FiraGO-light';
+  src: url('/fonts/FiraGO-Light.otf') format('opentype');
+}
+@font-face {
+  font-family: 'FiraGO-Bold';
+  src: url('/fonts/FiraGO-Bold.otf') format('opentype');
+}
 @font-face {
   font-family: 'Roboto';
   src: url('/fonts/Roboto-Regular.ttf') format('truetype');
 }
-
-
 @font-face {
   font-family: 'Oxygen';
   src: url('/fonts/Oxygen-Regular.ttf') format('truetype');
@@ -29,7 +38,10 @@
   font-family: 'Fira Sans';
   src: url('/fonts/FiraSans-Regular.ttf') format('truetype');
 }
-
+@font-face {
+  font-family: 'Calibri';
+  src: url('/fonts/calibri.ttf') format('truetype');
+}
 
 /* ფერები */
 :root {
