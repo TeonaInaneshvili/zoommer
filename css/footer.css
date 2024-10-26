@@ -7,21 +7,17 @@ footer a {
   color: var(--black-text);
   font-family: "Firago";
 }
+
 .footer-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   width: 100%;
-  max-width: 1200px;
-  margin: 0px auto;
-}
-.conteiner {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
+  max-width: 1170px;
+  margin: 0 auto;
   gap: 20px;
 }
 
+.conteiner,
 .social,
 .contacts {
   margin-top: 20px;
@@ -29,11 +25,12 @@ footer a {
   flex-direction: column;
   gap: 20px;
 }
+
 .footer-copyright {
   color: var(--light-black);
   border-top: 1px solid var(--white-text);
-  width: 100%;
-  max-width: 1200px;
+  width: 95%;
+  max-width: 1170px;
   margin: 0 auto;
   padding: 10px 0;
 }
@@ -43,46 +40,32 @@ footer a {
   padding-bottom: 15px;
   margin-bottom: 5px;
 }
+
 .social a,
 .contacts a {
-display: flex;
-gap: 10px;
+  display: flex;
+  gap: 10px;
 }
+
 @media (max-width: 1023px) {
-  .footer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-  }
   .footer-row {
-    flex-wrap: wrap;
-    padding: 20px 10px;
+    grid-template-columns: repeat(2, 40%);
+    justify-content: center;
+    gap: 20px;
   }
-  .social,
+}
+
+@media (max-width: 290px) {
+  .footer-row {
+    font-size: 10px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 20px;
+    line-height: 20px;
+  }
   .conteiner,
+  .social,
   .contacts {
     width: 40%;
-    gap: 10px;
   }
-  .zoomer-app-img {
-    display: none;
-  }
-}
-@media (max-width: 290px) {
-  .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-row {
-    flex-wrap: wrap;
-    gap: 50px;
-    padding: 20px 0;
-  }
-  .social,
-  .contacts {
-    width: 80%;
-    gap: 10px;
-  }
-
 }
