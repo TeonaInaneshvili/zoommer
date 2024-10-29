@@ -30,14 +30,12 @@
                 >
               </div>
               <nav class="nav">
-
                 <a href="trade-politics.html">სავაჭრო პოლიტიკა</a>
                 <a href="installment.html">განვადება</a>
                 <a href="career.html">კარიერა</a>
                 <a href="trade-in.html">Trade In</a>
                 <a href="branches.html">ფილიალები</a>
                 <a href="all-promotions.html">ყველა აქცია</a>
-
               </nav>
             </div>
           </div>
@@ -73,23 +71,26 @@
                     </div>
                   </a>
                   <!-- სერჩი-->
-                  <div class="bottom__nav-search">
-                    <div class="nav__search">
-                      <img src="/assets/main-search.svg" alt="category icon" />
-                      <input
-                        type="text"
-                        class="nav__search-input"
-                        placeholder="ძიება"
-                        value
-                      />
-                    </div>
-                  </div>
-                </div>
+<!-- Search Container -->
+<div class="bottom__nav-search">
+  <div class="nav__search">
+    <img src="/assets/main-search.svg" alt="search icon" />
+    <input
+      type="text"
+      class="nav__search-input"
+      placeholder="ძიება"
+    />
+  </div>
+  <!-- Search Results Dropdown -->
+  <div id="product-list" class="search-dropdown"></div>
+</div>
+
+
 
                 <!-- კალათის, შესვლის და ენის ღილაკები -->
 
                 <div class="bottom__mainPart-right flex">
-                  <div class="header__search-mini mob">
+                  <div class="header__search-mini">
                     <div class="header__search-mini-container flex">
                       <img src="/assets/search.svg" alt="search icon" />
                     </div>
@@ -163,21 +164,36 @@
                     </div>
                   </div>
 
-
-
-
                   <div class="header__lang-change" onclick="changeLanguage()">
                     <div class="lang-change__geo-flag">
-                      <img id="flag" src="./assets/flag-geo.png" alt="flag of Georgia" class="flag-icon" />
+                      <img
+                        id="flag"
+                        src="./assets/flag-geo.png"
+                        alt="flag of Georgia"
+                        class="flag-icon"
+                      />
                     </div>
-                  
-                    <div id="language_option" class="header__lang-change-container flex-column">
-                      <div class="geo lang-option" id="geo" onclick="chosenLanguage('geo')">GEO</div>
-                      <div class="eng lang-option" id="eng" onclick="chosenLanguage('eng')">ENG</div>
+
+                    <div
+                      id="language_option"
+                      class="header__lang-change-container flex-column"
+                    >
+                      <div
+                        class="geo lang-option"
+                        id="geo"
+                        onclick="chosenLanguage('geo')"
+                      >
+                        GEO
+                      </div>
+                      <div
+                        class="eng lang-option"
+                        id="eng"
+                        onclick="chosenLanguage('eng')"
+                      >
+                        ENG
+                      </div>
                     </div>
                   </div>
-                  
-                  
                 </div>
               </div>
             </div>
@@ -186,7 +202,6 @@
       </nav>
 
       <div class="overlay"></div>
-
 
       <div class="bottom__fixed-header">
         <div class="bottom__fixed-header-container">
@@ -230,7 +245,9 @@
             <h4 class="bottom__fixed-header-name">კატეგორიები</h4>
           </div>
           <div class="bottom__fixed-header-btn orange-sales flex-column">
-            <div class="bottom__fixed-header-btn-svg bottom__fixed-header-btn-svg-div flex">
+            <div
+              class="bottom__fixed-header-btn-svg bottom__fixed-header-btn-svg-div flex"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="27"
@@ -285,7 +302,9 @@
             </div>
             <h4 class="bottom__fixed-header-name">შედარება</h4>
           </div>
-          <div class="bottom__fixed-header-btn header__log-in-bottom flex-column">
+          <div
+            class="bottom__fixed-header-btn header__log-in-bottom flex-column"
+          >
             <div class="bottom__fixed-header-btn-svg">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -315,7 +334,6 @@
           </div>
         </div>
       </div>
-
 
       <!-- log-in__pop-up-containe -->
 
@@ -412,8 +430,6 @@
           </div>
         </div>
       </div>
-
-      
     </header>
   </body>
 </html>

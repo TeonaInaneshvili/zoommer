@@ -654,14 +654,18 @@ body {
   .first__section-categories {
     display: none;
   }
-}
-
-@media screen and (max-width: 1180px) {
-.swiper-slide {
-  width: 291px !important; /* თითოეული სურათის სიგანე */
-  height: 135px !important; /* თითოეული სურათის სიმაღლე */
-  
-}
+  .swiper-slide-m {
+    width: 291px !important; 
+    height: 135px !important;
+  }
+  .swiper-slide-m img {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-button-next-m,
+  .swiper-button-prev-m {
+    display: none;
+  }
 }
 @media screen and (max-width: 900px) {
   .swiper-slide-custom-style {
@@ -678,5 +682,4 @@ body {
   .swiper-button-prev {
     display: none;
   }
-
 }
