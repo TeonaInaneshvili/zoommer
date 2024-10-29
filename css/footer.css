@@ -1,48 +1,57 @@
 footer {
   font-family: "FiraGO";
   background-color: var(--footer-bg-color);
-  padding: 10px 0;
 }
 footer a {
-  color: var(--black-text);
+  color: var(--light-black);
   font-family: "FiraGO";
   display: flex;
   white-space: nowrap;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 .footer-row {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
   gap: 120px;
+  padding: 20px 0px;
 }
 
 .conteiner,
 .social,
 .contacts {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: fit-content;
 }
-
+.footer-copyright-container {
+  border-top: 2px solid var(--white-text);
+}
 .footer-copyright {
-  color: var(--light-black);
-  border-top: 1px solid var(--white-text);
-  width: 95%;
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 10px 0;
+  color: rgba(0, 0, 0, 0.6);
+  opacity: 0.6;
+  font-weight: 350;
+  font-size: 14px;
+  line-height: 15px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
 }
 
 .footer h4 {
-  font-size: 12px;
-  font-weight: 700;
   color: var(--light-black);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
   border-bottom: 1px solid var(--corp-color);
   padding-bottom: 15px;
   margin-bottom: 5px;
@@ -53,33 +62,65 @@ footer a {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-weight: 300;
+  font-family: "FiraGO-light";
 }
 
-@media (max-width: 1023px) {
+.zoommer-app-span {
+  font-size: 12px;
+  line-height: 20px;
+  weight: 400;
+  color: var(--light-black);
+  cursor: pointer;
+}
+
+.zoommer__app-img {
+  position: absolute;
+  right: -40px;
+  height: 25px;
+  width: 135px;
+  bottom: 20px;
+}
+@media (max-width: 1280px) {
+  .zoommer__app-img {
+    position: sticky;
+    margin-top: -20px;
+  }
+}
+@media (max-width: 1230px) {
   .footer-row {
     margin: 0 auto;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     gap: 20px;
   }
-  .conteiner,
-  .social,
-  .contacts {
-    line-height: 20px;
-    white-space: wrap;
-}
-}
-@media (max-width: 290px) {
-  .footer-row {
-    font-size: 10px;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0 20px;
-    line-height: 20px;
+  footer {
+    margin-bottom: 80px;
   }
-  .conteiner,
-  .social,
-  .contacts {
-    width: 40%;
+  footer a {
+    line-height: 20px;
+    white-space: inherit;
+  }
+  .footer-row {
+    gap: 50px;
+    padding: 20px;
+  }
+}
+@media (max-width: 1023px) {
+  .footer a {
+    font-size: 10px;
+  }
+  .zoommer__app-img img {
+    position: absolute;
+    margin-top: -20px;
+  }
+}
+@media (max-width: 405px) {
+  .footer-row {
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 20px;
+    font-size: 10px;
   }
 }

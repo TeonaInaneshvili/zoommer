@@ -191,14 +191,11 @@ function ebiDisplayBottomLeftImage(ebiCategoryData) {
   }
 }
 
-
-
 function ebiInitializeSwiper() {
   new Swiper(".swiper-container-m", {
     spaceBetween: 30,
-    slidesPerView: 1,
-    centeredSlides: true,
-    speed: 800, // Set the speed to 1000ms (1 second). You can increase this for slower transitions.
+    speed: 800,
+    loop: false, // Ensures swiper doesn't loop
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
@@ -207,28 +204,31 @@ function ebiInitializeSwiper() {
       el: ".swiper-pagination",
       clickable: true,
     },
-    direction: getDirection(),
     navigation: {
       nextEl: ".swiper-button-next-m",
       prevEl: ".swiper-button-prev-m",
     },
-    watchOverflow: true,
-    on: {
-      resize: function () {
-        this.changeDirection(getDirection());
+    watchOverflow: true, // Prevents extra space when there are fewer slides
+    breakpoints: {
+      1023: {
+        slidesPerView: 3.5, // 3 slides per view on smaller screens
+        spaceBetween: 10,
       },
+      1024: {
+        slidesPerView: 1, // 1 slide per view on larger screens
+      }
     },
   });
+  document.querySelector(".swiper-container-m").style.display = "block";
 }
 
+ebiInitializeSwiper();
 
 
 
-
-
-function getDirection() {
-  return (window.innerWidth = "horizontal");
-}
+// function getDirection() {
+//   return (window.innerWidth = "horizontal");
+// }
  
 
 
@@ -325,7 +325,21 @@ async function ebiFetchAndGenerateSwiperSlides() {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  ebiGenerateCategories(); // Generate categories
-  ebiFetchAndGenerateSwiperSlides(); // Generate Swiper slides
+document.addEventListener("DOMContentLoaded", async () => {
+  // Hide the container initially to prevent the white space
+  const ebiCategoriesContainer = document.querySelector(
+    "#ebi-first-section-categories"
+  );
+  if (ebiCategoriesContainer) {
+    ebiCategoriesContainer.style.visibility = "hidden"; // Hide initially
+  }
+
+  // Generate categories and Swiper slides
+  await ebiGenerateCategories();
+  await ebiFetchAndGenerateSwiperSlides();
+
+  // Show the container once content is loaded
+  if (ebiCategoriesContainer) {
+    ebiCategoriesContainer.style.visibility = "visible"; // Show after loading
+  }
 });

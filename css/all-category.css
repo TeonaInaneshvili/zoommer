@@ -99,9 +99,17 @@
 @media (max-width: 1230px) {
   .all-category__section-columns {
     grid-template-columns: repeat(3, calc(33% - 15px));
+    margin: -10px 0px 60px;
   }
 }
-
+@media (max-width: 1025px) {
+  .all-category__section-header {
+    border-bottom: none;
+    margin: -40px 0px 20px;
+    flex-grow: 1;
+    margin: -40px 0px 10px;
+  }
+}
 @media (max-width: 650px) {
   .all-category__section-columns {
     grid-template-columns: repeat(2, calc(50% - 15px));
