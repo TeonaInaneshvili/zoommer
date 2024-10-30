@@ -1,13 +1,30 @@
+let searchInput = "";
+
 document.addEventListener("DOMContentLoaded", function () {
   // Load header and footer HTML
   loadHTML("header.html", "header");
   loadHTML("footer.html", "footer");
 
+  // Initialize cart popup behavior
   const cartContainer = document.querySelector(".cart-container");
   const cartPopup = document.querySelector(".cart-popup");
+  console.log(searchInput);
+  setTimeout(() => {
+    searchInput = document.getElementById("search_input");
+    console.log(searchInput);
+    searchInput.addEventListener("keyup", () => {
+      let typingTimeout;
+      clearTimeout(typingTimeout);
+
+      typingTimeout = setTimeout(() => {
+        const query = searchInput.value.trim();
+        const results = search(query);
+        displayResults(results);
+      }, 500);
+    });
+  }, 500);
 
   cartContainer.addEventListener("mouseenter", function () {
-    // Load cart content if not already loaded
     if (!cartPopup.innerHTML.trim()) {
       fetch("cart.html")
         .then((response) => {
@@ -23,9 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Optional: Hide the popup on mouse leave
   cartContainer.addEventListener("mouseleave", function () {
-    cartPopup.innerHTML = ""; // Optionally clear the content when not hovering
+    cartPopup.innerHTML = "";
   });
 });
 
@@ -38,18 +54,7 @@ function loadHTML(filename, elementSelector) {
     .catch((error) => console.log("Error loading file:", error));
 }
 
-window.onscroll = function () {
-  const headerTopPart = document.querySelector(".header__top-part");
-  const headerSecondLine = document.getElementById("header__second-line");
-
-  if (window.scrollY > 50) {
-    headerTopPart.style.display = "none";
-    headerSecondLine.classList.add("scrolled");
-  } else {
-    headerTopPart.style.display = "flex";
-    headerSecondLine.classList.remove("scrolled");
-  }
-};
+// Remaining existing code, such as login popup, language selection, and category loading, would go here
 
 document.addEventListener("click", function () {
   // Login pop-up functionality
@@ -163,6 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 let zoomerApiData = "";
+let zoommerSearchData = [];
 let swiperObject = {
   swiper1: new Swiper(".mySwiper1", {
     slidesPerView: 6,
@@ -500,12 +506,110 @@ function getLastViewedItems() {
   return null;
 }
 
+async function fetchData() {
+  try {
+    const response = await fetch("productsData.json");
+    zoommerSearchData = await response.json();
+  } catch (error) {
+    console.error("Error fetching product data:", error);
+  }
+}
+
+function search(value) {
+  console.log(value);
+  if (value == "") return [];
+  return zoommerSearchData.filter((item) =>
+    item.name.toLowerCase().includes(value.toLowerCase())
+  );
+}
+
+function setupSearchFunctionality() {
+  console.log(searchInput);
+  const productListContainer = document.createElement("div");
+  productListContainer.classList.add("productListContainer");
+  productListContainer.id = "productListContainer_Id";
+  searchInput.parentNode.appendChild(productListContainer);
+}
+
+function displayResults(results) {
+  console.log(results);
+  const productListWrapper = document.createElement("div");
+  const productListContainer = document.getElementById(
+    "productListContainer_Id"
+  );
+  productListContainer.innerHTML = "";
+
+  if (results.length === 0) {
+    return;
+  }
+  productListWrapper.style.display = "flex";
+  productListWrapper.style.flexDirection = "column";
+
+  const productList = document.createElement("ul");
+  productList.id = "product-list";
+  productList.style.display = "none";
+
+  productListWrapper.appendChild(productList);
+  productListContainer.appendChild(productListWrapper);
+  productList.innerHTML = "";
+  productList.style.display = results.length > 0 ? "block" : "none";
+
+  results.forEach((item) => {
+    const listItem = document.createElement("li");
+    listItem.style.display = "flex";
+    listItem.style.alignItems = "center";
+    listItem.style.padding = "8px";
+    listItem.style.cursor = "pointer";
+    listItem.style.borderBottom = "1px solid #ddd";
+
+    const itemImage = document.createElement("img");
+    itemImage.src = item.imageUrl;
+    itemImage.alt = item.name;
+    itemImage.style.width = "50px";
+    itemImage.style.height = "50px";
+    itemImage.style.marginRight = "10px";
+
+    // Container for name and price
+    const detailsContainer = document.createElement("div");
+    detailsContainer.style.flexGrow = "1";
+
+    // Set text content for the item name and price
+    const itemName = document.createElement("span");
+    itemName.textContent = item.name;
+    itemName.style.fontWeight = "bold";
+
+    const itemPrice = document.createElement("span");
+    itemPrice.textContent = item.price;
+    itemPrice.style.color = "#888"; // Light color for price
+
+    // Append name and price to details container
+    detailsContainer.appendChild(itemName);
+    detailsContainer.appendChild(itemPrice);
+
+    listItem.appendChild(itemImage);
+    listItem.appendChild(detailsContainer);
+
+    const arrowIcon = document.createElement("span");
+    arrowIcon.textContent = "›";
+    arrowIcon.style.color = "#888";
+    arrowIcon.style.marginLeft = "auto";
+    listItem.appendChild(arrowIcon);
+
+    productList.appendChild(listItem);
+  });
+}
+
+// document.addEventListener("DOMContentLoaded", setupSearchFunctionality);
+
+fetchData();
+
 async function getDataFromZoommerApi() {
   try {
     const response = await fetch("data.json");
     zoomerApiData = await response.json();
 
-    console.log(zoomerApiData);
+    const response2 = await fetch("productsData.json");
+    zoommerSearchData = await response2.json();
     let itemIndex = 1;
 
     for (const section of zoomerApiData.section) {
@@ -565,3 +669,16 @@ async function getDataFromZoommerApi() {
 }
 
 getDataFromZoommerApi().then();
+window.onscroll = function () {
+  const headerTopPart = document.querySelector(".header__top-part");
+  const headerSecondLine = document.getElementById("header__second-line");
+
+  if (window.scrollY > 50) {
+    headerTopPart.style.display = "none";
+    headerSecondLine.classList.add("scrolled");
+    console.log("teona")
+  } else {
+    headerTopPart.style.display = "flex";
+    headerSecondLine.classList.remove("scrolled");
+  }
+};

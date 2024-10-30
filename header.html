@@ -70,21 +70,20 @@
                       <h4 class="category__btn-name">ნავიგაცია</h4>
                     </div>
                   </a>
-                  <!-- სერჩი-->
-<!-- Search Container -->
-<div class="bottom__nav-search">
-  <div class="nav__search">
-    <img src="/assets/main-search.svg" alt="search icon" />
-    <input
-      type="text"
-      class="nav__search-input"
-      placeholder="ძიება"
-    />
-  </div>
-  <!-- Search Results Dropdown -->
-  <div id="product-list" class="search-dropdown"></div>
-</div>
-
+<!-- სერჩი -->
+<form
+action=""
+id="search_conteiner"
+class="bottom__nav-search"
+>
+<img src="/assets/main-search.svg" alt="search icon" class="nav__search-img" />
+<input
+  id="search_input"
+  type="text"
+  placeholder="ძიება"
+  onclick="setupSearchFunctionality ()"
+/>
+</form>
 
 
                 <!-- კალათის, შესვლის და ენის ღილაკები -->
