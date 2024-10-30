@@ -1,5 +1,18 @@
 let ebiCachedMenuData = null; // Variable to store menu data
 let ebiCachedSwiperData = null; // Variable to store swiper data
+//BURGER MENU BY EBITASHVIL
+function onHamburgerClick() {
+  if (!firstSectionCategories.classList.contains("open")) {
+    firstSectionCategories.classList.add("open");
+  } else {
+    firstSectionCategories.classList.remove("open");
+  }
+}
+
+const hamburgerToggle = document.querySelector("#hamburger-toggle");
+const firstSectionCategories = document.querySelector(
+  "#ebi-first-section-categories"
+);
 
 // Function to fetch menu data
 async function ebiFetchMenuData() {
@@ -42,8 +55,7 @@ async function ebiGenerateCategories() {
         <img src="${ebiCategory.iconUrl}" alt="${ebiCategory.name} Icon" />
         <h4>${ebiCategory.name}</h4>
       </a>
-      <div class="subcategories-menu"></div> <!-- Placeholder for subcategories -->`
-    ;
+      <div class="subcategories-menu"></div> <!-- Placeholder for subcategories -->`;
 
       // Append the category to the container
       ebiCategoriesContainer.appendChild(ebiCategoryDiv);
@@ -64,7 +76,9 @@ function ebiAttachHoverEvents() {
       await ebiHandleCategoryHover(ebiCategoryKey);
 
       // Get the subcategories menu and its height
-      const ebiSubcategoriesMenu = event.currentTarget.querySelector(".subcategories-menu");
+      const ebiSubcategoriesMenu = event.currentTarget.querySelector(
+        ".subcategories-menu"
+      );
 
       // Ensure that the subcategories-menu is visible before measuring its height
       if (ebiSubcategoriesMenu) {
@@ -72,7 +86,9 @@ function ebiAttachHoverEvents() {
         const subcategoriesHeight = ebiSubcategoriesMenu.offsetHeight;
 
         // Set the height of .first__section-categories to match the subcategories height
-        const ebiCategoriesContainer = document.querySelector(".first__section-categories");
+        const ebiCategoriesContainer = document.querySelector(
+          ".first__section-categories"
+        );
         ebiCategoriesContainer.style.height = `${subcategoriesHeight}px`;
       }
     });
@@ -81,8 +97,10 @@ function ebiAttachHoverEvents() {
       ebiHideAllSubcategories();
 
       // Reset the height of .first__section-categories after hover ends
-      const ebiCategoriesContainer = document.querySelector(".first__section-categories");
-      ebiCategoriesContainer.style.height = ''; // Reset to original height
+      const ebiCategoriesContainer = document.querySelector(
+        ".first__section-categories"
+      );
+      ebiCategoriesContainer.style.height = ""; // Reset to original height
     });
   });
 }
@@ -145,7 +163,14 @@ function ebiDisplayParentAndSubcategories(ebiCategoryData, ebiCategoryKey) {
     if (ebiParentCategory.childItems) {
       ebiParentCategory.childItems.forEach((ebiSubCategory) => {
         // Display Subcategories
-        ebiParentCategoryHTML += `<a href="${ebiSubCategory.url}" class="subcategory-item">${ebiSubCategory.name}</a>`;
+        ebiParentCategoryHTML += `
+        <div class="subcategories_a_wrapper"> 
+        <a href="${ebiSubCategory.url}" class="subcategory-item">
+        <img src="${ebiSubCategory.imageUrl}" alt="${ebiSubCategory.name} Image" class="subcategory-image" />
+        ${ebiSubCategory.name}
+      
+      </a>
+      <div/> `;
       });
     }
 
@@ -216,7 +241,7 @@ function ebiInitializeSwiper() {
       },
       1024: {
         slidesPerView: 1, // 1 slide per view on larger screens
-      }
+      },
     },
   });
   document.querySelector(".swiper-container-m").style.display = "block";
@@ -224,15 +249,9 @@ function ebiInitializeSwiper() {
 
 ebiInitializeSwiper();
 
-
-
 // function getDirection() {
 //   return (window.innerWidth = "horizontal");
 // }
- 
-
-
-
 
 // Function to fetch and generate Swiper slides dynamically
 async function ebiFetchAndGenerateSwiperSlides() {
@@ -275,7 +294,6 @@ async function ebiFetchAndGenerateSwiperSlides() {
 
     // Add dynamic transform logic
     ebiAddSwiperDynamicTransform();
-
   } catch (error) {
     console.error("Failed to fetch swiper data:", error);
   }
@@ -323,7 +341,6 @@ async function ebiFetchAndGenerateSwiperSlides() {
     console.error("Failed to fetch swiper data:", error);
   }
 }
-
 
 document.addEventListener("DOMContentLoaded", async () => {
   // Hide the container initially to prevent the white space

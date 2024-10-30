@@ -41,18 +41,44 @@
           </div>
         </div>
         <!-- ნავიგაციის ქვედა ანუ bottom ნაწილი -->
-        <div id="header__second-line" class="header__second-line">
-          <div class="nav__container-bottom flex">
-            <div class="nav__container-bottom-div flex">
-              <!--  ბურგერ მენიუ -->
-              <div class="burger__zoomer-logo flex">
-                <div class="nav__burger">
-                  <img
-                    src="/assets/burger-icon.svg"
-                    class="nav__burger"
-                    alt="nav__burger-icon"
-                  />
-                </div>
+<!-- ნავიგაციის ქვედა ანუ bottom ნაწილი -->
+<div id="header__second-line" class="header__second-line">
+  <div class="nav__container-bottom flex">
+    <div class="nav__container-bottom-div flex">
+      <!-- ბურგერ მენიუ -->
+      <div class="burger__zoomer-logo flex">
+        <button
+          id="hamburger-toggle"
+          class="nav__burger"
+          aria-label="Toggle navigation"
+          onclick="onHamburgerClick()"
+        >
+          <div class="icon-open burger-icon">
+            <img
+              src="/assets/burger-icon.svg"
+              class="nav__burger-icon"
+              alt="Menu icon"
+            />
+          </div>
+
+          <div class="icon-close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              width="24"
+              height="24"
+              stroke-width="2"
+            >
+              <path d="M18 6l-12 12"></path>
+              <path d="M6 6l12 12"></path>
+            </svg>
+          </div>
+  </button>
+
                 <!-- ზუმერის ლოგო -->
                 <div class="nav__bottom-logo">
                   <a href="index.html"
