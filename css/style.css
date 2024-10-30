@@ -239,7 +239,11 @@ body {
   display: none; /* If no subcategories, don't display empty space */
 }
 
-/* Responsive settings */
+@media (max-width: 1200px) {
+  .nav__container-bottom-div {
+    gap: 80px;
+  }
+}
 @media (max-width: 1024px) {
   .first__section {
     flex-direction: column;
@@ -386,6 +390,7 @@ body {
   position: fixed;
   bottom: 40px;
   right: 25px;
+  z-index: 1000;
 }
 .floating-icons div:hover {
   transition: 0.5s;
@@ -420,7 +425,7 @@ body {
   border: 1px solid rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
   transition: transform 0.2s;
-  background: var(--white-400);
+  background: var(--vs-btn-color);
 }
 .floating-compare {
   cursor: pointer;
@@ -448,8 +453,6 @@ body {
   display: none;
   background-color: white;
   opacity: 1;
-  width: 280px;
-  height: 480px;
   border-radius: 24px;
   border: 2px solid #f2f2f2;
   flex-direction: column;
@@ -475,6 +478,12 @@ body {
   display: flex;
   opacity: 1;
   transform: translateY(0);
+  z-index: 10001;
+  width: 321px;
+  height: 514px;
+  bottom: 100px;
+  color: #f07908;
+  font-size: 16px;
 }
 .chat-text {
   display: flex;
@@ -491,8 +500,10 @@ body {
 }
 .chat-popup-logo {
   display: flex;
+  justify-content: space-between;
   gap: 10px;
   align-items: center;
+  padding: 0px 20px;
 }
 .chat-popup-logo img {
   width: 170px;
@@ -500,8 +511,27 @@ body {
 .close-btns {
   display: flex;
   align-items: center;
+  gap: 2px;
 }
-
+.chat__bottom-line {
+  width: 107px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+}
+.chat__bottom-line p {
+  margin-right: 4px;
+  font-family: "FiraGo-Regular";
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 24px;
+  margin-top: 1px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.chat__bottom-line img {
+  width: 40px;
+  height: 14px;
+}
 /* Responsive Settings */
 @media (max-width: 1024px) {
   .first__section-wrapper {

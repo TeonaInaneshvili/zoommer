@@ -95,7 +95,6 @@ header {
   }
 }
 
-
 #header__second-line.scrolled {
   position: fixed;
   top: 0;
@@ -747,8 +746,8 @@ header {
   .header__search-mini {
     display: block;
   }
-  .bottom__nav-search,
-  .nav__bottom-category-button {
+  .nav__bottom-category-button,
+  #search_conteiner {
     display: none;
   }
 
@@ -772,6 +771,7 @@ header {
   .nav__container-bottom-div {
     height: 50px;
     justify-content: space-between;
+    padding: 0;
   }
 
   .nav__bottom-mainPart {
@@ -785,8 +785,8 @@ header {
   }
 
   .nav__burger img {
-    margin-left: -12px;
-    padding: 10px 12px;
+    padding: 0px 0px 0px -12px;
+    margin-right: 12px;
   }
   .burger__zoomer-logo {
     align-items: center;
@@ -797,12 +797,17 @@ header {
     background-color: var(--nav-bg-color);
     width: auto;
     filter: unset;
+
   }
+
   .header__lang-change {
     border: 1px solid rgba(0, 0, 0, 0.075);
     border-radius: 6px;
+    padding: 6px 7px;
   }
-
+  .header__Cart{
+    padding: 0;
+  }
   .bottom__mainPart-right {
     display: flex;
     align-items: center;
