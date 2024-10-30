@@ -544,7 +544,6 @@ function displayResults(results) {
   }
   productListWrapper.style.display = "flex";
   productListWrapper.style.flexDirection = "column";
-
   const productList = document.createElement("ul");
   productList.id = "product-list";
   productList.style.display = "none";
@@ -565,33 +564,47 @@ function displayResults(results) {
     const itemImage = document.createElement("img");
     itemImage.src = item.imageUrl;
     itemImage.alt = item.name;
-    itemImage.style.width = "50px";
-    itemImage.style.height = "50px";
-    itemImage.style.marginRight = "10px";
 
     // Container for name and price
     const detailsContainer = document.createElement("div");
+    detailsContainer.classList.add("detailsContainer");
     detailsContainer.style.flexGrow = "1";
 
     // Set text content for the item name and price
     const itemName = document.createElement("span");
+    itemName.classList.add("dropDownitemName");
     itemName.textContent = item.name;
     itemName.style.fontWeight = "bold";
 
+    const prices = document.createElement("div");
+    prices.classList.add("prices");
+
     const itemPrice = document.createElement("span");
+    itemPrice.classList.add("itemPrice");
     itemPrice.textContent = item.price;
-    itemPrice.style.color = "#888"; // Light color for price
+
+    const previousPrice = document.createElement("span");
+    previousPrice.classList.add("previousPrice");
+    previousPrice.textContent = item.previousPrice;
+
+    const preSalePrice = document.createElement("span");
+    preSalePrice.classList.add("preSalePrice");
+    preSalePrice.textContent = item.preSalePrice;
 
     // Append name and price to details container
     detailsContainer.appendChild(itemName);
-    detailsContainer.appendChild(itemPrice);
-
     listItem.appendChild(itemImage);
     listItem.appendChild(detailsContainer);
+    listItem.appendChild(prices);
+    detailsContainer.appendChild(prices);
+
+    prices.appendChild(itemPrice);
+    prices.appendChild(previousPrice);
+    prices.appendChild(preSalePrice);
 
     const arrowIcon = document.createElement("span");
+    arrowIcon.classList.add("dropDownarrowIcon");
     arrowIcon.textContent = "›";
-    arrowIcon.style.color = "#888";
     arrowIcon.style.marginLeft = "auto";
     listItem.appendChild(arrowIcon);
 
@@ -669,6 +682,32 @@ async function getDataFromZoommerApi() {
 }
 
 getDataFromZoommerApi().then();
+
+function showCookieConsent() {
+  const cookieConsent = localStorage.getItem("cookieConsent");
+
+  if (!cookieConsent) {
+    setTimeout(() => {
+      const consentDiv = document.getElementById("cookie-consent");
+      consentDiv.style.display = "block";
+    }, 3000);
+  }
+}
+
+function handleCookieDecision(decision) {
+  localStorage.setItem("cookieConsent", decision);
+  const consentDiv = document.getElementById("cookie-consent");
+  consentDiv.style.display = "none";
+}
+
+showCookieConsent();
+document.getElementById("accept-cookies").addEventListener("click", () => {
+  handleCookieDecision("accepted");
+});
+document.getElementById("reject-cookies").addEventListener("click", () => {
+  handleCookieDecision("rejected");
+});
+
 window.onscroll = function () {
   const headerTopPart = document.querySelector(".header__top-part");
   const headerSecondLine = document.getElementById("header__second-line");
@@ -676,7 +715,7 @@ window.onscroll = function () {
   if (window.scrollY > 50) {
     headerTopPart.style.display = "none";
     headerSecondLine.classList.add("scrolled");
-    console.log("teona")
+    console.log("teona");
   } else {
     headerTopPart.style.display = "flex";
     headerSecondLine.classList.remove("scrolled");
