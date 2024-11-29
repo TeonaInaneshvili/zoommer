@@ -48,199 +48,6 @@ body {
   width: 12px;
 }
 
-/* მაკას კოდი */
-
-.first__section {
-  width: 100%;
-  max-width: 1200px; /* Limits the maximum width of the section */
-  display: flex; /* Enables flexbox layout */
-  justify-content: center; /* Centers children horizontally */
-  align-items: flex-start; /* Aligns children to the top */
-  padding: 0 15px; /*Adds space inside the section */
-  margin: 30px auto 0; /* Adds space on top, centers left and right */
-  position: relative; /* Sets a positioning context for absolutely positioned children */
-}
-
-.first__Section-main-div {
-  padding: 0 15px;
-}
-/* Categories section */
-.first__section-categories {
-  display: flex; /* Enables flexbox layout */
-  flex-direction: column; /* Stack children vertically */
-  width: 246px; /* Width of the categories section */
-  height: 344px; /* Height of the categories section */
-  padding: 0; /* No padding */
-  margin-right: 30px; /* No margin */
-  border: 0; /* No border */
-  background-color: white; /* Background color */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-  position: relative; /* Add this line to create the positioning context */
-}
-
-/* Main Parent Category */
-.main-parent-category {
-  caret-color: transparent; /* Makes the caret invisible */
-  width: 246px; /* Sets the width of each category */
-  height: 43px;
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  cursor: pointer;
-  padding: 11.5px 10px 11.5px 15px;
-}
-
-.a-tag-underline {
-  width: 246px;
-  justify-items: flex-start;
-  border-bottom: 1px solid #f2f2f2;
-  height: 43px;
-}
-.first__section-categories > .main-parent-category:last-child a {
-  border-bottom: none;
-}
-
-/* Changes link color on hover, visited, or active */
-.main-parent-category a:hover,
-.main-parent-category a:visited,
-.main-parent-category a:active {
-  color: black; /* Keeps link color consistent */
-  text-decoration: none; /* Ensures no underline */
-}
-/* Sets styles for category images */
-.main-parent-category a {
-  display: flex; /* Make the link behave as a block and flexbox container */
-  align-items: center; /* Vertically align the items (img and h4) */
-  text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Inherit the color from the parent */
-}
-
-.main-parent-category img {
-  width: 23px; /* Fixed width for category icons */
-  height: 20px; /* Fixed height for category icons */
-  margin-right: 10px; /* Adjust space to the right of the icon */
-}
-
-.main-parent-category h4 {
-  font-weight: 500; /* Font weight for category heading */
-  font-size: 12px; /* Font size */
-  line-height: 14px; /* Line height */
-  color: rgba(0, 0, 0, 0.8);
-  opacity: 0.8; /* Opacity */
-  cursor: pointer; /* Pointer on hover */
-  margin: 0; /* Remove default margin */
-}
-
-/* Change background color of the entire parent category on hover */
-.main-parent-category:hover {
-  background-color: #f2f2f2; /* Set hover background color */
-}
-
-/* Changes link color on hover, visited, or active */
-.main-parent-category a:hover,
-.main-parent-category a:visited,
-.main-parent-category a:active {
-  color: black; /* Keeps link color consistent */
-  text-decoration: none; /* Ensures no underline */
-}
-
-/* Subcategories menu - fixed width */
-.subcategories-menu {
-  height: auto;
-  display: none;
-  position: absolute;
-  top: 0; /* Aligns with the top of the categories section */
-  left: 246px; /* Positions submenu next to the first category */
-  background: #fff;
-  padding: 20px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  width: 925px;
-  display: flex;
-  flex-wrap: wrap;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;
-  border-radius: 12px;
-  /* gap: 30px; */
-  padding: 20px;
-}
-#first__section-subcategories-container {
-  position: relative; /* This makes the container a reference for absolute positioning */
-}
-
-/* Styles for the bottom-left image container */
-.submenu-bottom-image {
-  display: none; /* Hides the container */
-  position: absolute; /* Position it relative to the #first__section-subcategories-container */
-  bottom: 0;
-  right: 0;
-}
-
-/* Style the image inside the submenu-bottom-image div */
-.submenu-bottom-image img {
-  width: 246px;
-  min-height: 342px;
-  background: var(--white-main);
-  border-radius: 12px;
-  display: block; /* Ensure the image behaves as a block element */
-}
-
-/* Flex basis adjustment to ensure max 4 columns */
-.parent-category,
-.subcategory-item {
-  flex: 0 1 22%; /* Ensures that up to 4 items fit in a row */
-  max-width: 22%; /* Maximum width per item */
-  min-width: 150px; /* Ensure minimum width for better visibility */
-  display: block;
-  text-decoration: none;
-  padding: 5px 0;
-  white-space: nowrap; /* Prevent items from wrapping inside the box */
-}
-
-/* Prevent flex from wrapping new row until 4 items are present */
-.subcategories-menu .parent-category-container {
-  width: calc(25% - 15px); /* Adjust to ensure spacing aligns well */
-}
-
-/* Show subcategories when hovering over a main parent category */
-.main-parent-category:hover .subcategories-menu {
-  display: flex;
-}
-
-/* Styling for Parent Category Headers in Submenu */
-.parent-category {
-  font-size: 16px !important; /* Sets font size for parent categories */
-  font-weight: bold !important; /* Makes the text bold */
-  color: black !important; /* Sets text color */
-  text-decoration: none; /* Removes underline */
-  margin-bottom: 5px; /* Adds space below each parent category */
-  white-space: nowrap; /* Prevents text wrapping */
-}
-
-/* Styling for Subcategories (Links) */
-.subcategory-item {
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  color: rgba(0, 0, 0, 0.8);
-  cursor: pointer;
-  opacity: 0.8;
-  text-decoration: none; /* Removes underline */
-  white-space: nowrap; /* Prevents text wrapping */
-}
-
-.subcategory-item:hover {
-  color: #ff6600;
-  text-decoration: underline;
-}
-
-/* Hide empty subcategory menus */
-.subcategories-menu:empty {
-  display: none; /* If no subcategories, don't display empty space */
-}
-
-
- 
 .cookie-consent {
   display: none;
   position: fixed;
@@ -322,150 +129,7 @@ body {
   font-family: FiraGO;
 }
 
-
-@media (max-width: 1200px) {
-  .nav__container-bottom-div {
-    gap: 80px;
-  }
-}
-@media (max-width: 1024px) {
-  .first__section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .first__section-categories {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .subcategories-menu {
-    min-width: 400px; /* Adjust width for smaller screens */
-    flex-wrap: wrap; /* Allow wrapping */
-    flex-direction: row;
-  }
-
-  .parent-category,
-  .subcategory-item {
-    flex: 1 1 45%; /* Switch to 2 columns on small screens */
-    max-width: 45%;
-  }
-}
-
-/* Adjustments for better column distribution */
-@media (max-width: 768px) {
-  .subcategories-menu {
-    grid-template-columns: 1fr; /* Single column on very small screens */
-  }
-
-  .parent-category,
-  .subcategory-item {
-    flex: 1 1 100%; /* Full width for small screens */
-    max-width: 100%;
-  }
-}
-
-/* Styles for the swiper container */
-.swiper-container {
-  max-width: 894px;
-  position: relative; /* Allows absolute positioning of child elements */
-  width: 100%; /* Sets full width of the swiper */
-  height: 100%; /* Sets full height of the swiper */
-  overflow: hidden; /* Hides overflowing content */
-}
-
-/* Styles for the swiper wrapper */
-.swiper-wrapper-m {
-  display: flex; /* Enables flex layout for slides */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;
-  /* flex-wrap: wrap; */
-  flex-direction: row;
-  height: 100%; /* Full height of the swiper */
-}
-
-/* Styles for each swiper slide */
-.swiper-slide-m {
-  max-width: 894px !important;
-  grid-template-columns: 30px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-/* Styles for images within slides */
-.swiper-slide-m img {
-  height: 340px;
-  width: 100%; /* Sets full width of the slide */
-  height: auto; /* Maintains aspect ratio */
-  display: block; /* Ensures image behaves like a block element */
-  border-radius: 12px; /* Rounds corners for slide images */
-  width: 100%; /* Ensure the image covers the entire slide width */
-  height: auto;
-}
-
-/* Styles for arrow buttons */
-.swiper-button-next,
-.swiper-button-prev {
-  width: 40px !important; /* Fixed width for arrow buttons */
-  height: 40px !important; /* Fixed height for arrow buttons */
-  border-radius: 50%; /* Circular shape for buttons */
-  display: flex; /* Enables flex layout for centering content */
-  align-items: center; /* Centers content vertically */
-  justify-content: center; /* Centers content horizontally */
-  cursor: pointer; /* Pointer cursor on hover */
-  background-color: white; /* Background color for buttons */
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  position: absolute; /* Positions buttons absolutely */
-  top: 50%; /* Centers vertically in the swiper */
-  transform: translateY(-50%); /* Adjusts position to center */
-}
-
-/* Positions the next button */
-.swiper-button-next {
-  right: 10px; /* Positions next button to the right */
-}
-
-/* Positions the previous button */
-.swiper-button-prev {
-  left: 10px; /* Positions previous button to the left */
-}
-
-/* Styles for arrow icons */
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 10px !important; /* Sets font size for arrow icons */
-  color: black; /* Sets color for arrow icons */
-}
-
-/* Styles for disabled arrow buttons */
-.swiper-button-disabled {
-  opacity: 1; /* Ensures buttons remain visible */
-  pointer-events: none; /* Disables interaction */
-  background-color: white !important; /* Ensures buttons stay the same color */
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for disabled state */
-}
-
-/* Styles for disabled arrow icons */
-.swiper-button-disabled::after {
-  color: black; /* Color for arrow icons in disabled state */
-}
+/*  --------  ------------  */
 
 .floating-icons {
   display: flex;
@@ -616,46 +280,49 @@ body {
   width: 40px;
   height: 14px;
 }
-/* Responsive Settings */
-@media (max-width: 1024px) {
-  .first__section-wrapper {
-    flex-direction: column; /* Stacks categories and swiper vertically */
-    align-items: center; /* Centers items horizontally */
-  }
-
-  .first__section-categories {
-    order: 1; /* Set the order of the sidebar */
-    width: 100%; /* Makes categories section full width */
-    margin-bottom: 20px; /* Adds space below the categories */
-  }
-
-  .first__section-swiper {
-    width: 100%; /* Makes swiper section full width */
-    order: 2; /* Set the order of the swiper */
-  }
-
-  .subcategories-menu {
-    grid-template-columns: repeat(2, 1fr); /* Adjusts submenu to 2 columns */
-    width: 100%; /* Makes submenu full width */
-    left: 0; /* Aligns submenu to the left */
-    top: 100%; /* Positions submenu below the parent category */
-  }
-
-  .floating-icons {
-    bottom: 80px;
-  }
-}
-
-@media (max-width: 768px) {
-  .subcategories-menu {
-    grid-template-columns: 1fr; /* Switches submenu to 1 column */
-  }
-}
 
 /* სალოს კოდი */
-.swiper-costum-style {
-  margin-bottom: 30px;
+
+/* ----- დიდი სვაიპერი ----- */
+
+.swiper-container-baners {
+  width: 100%;
+  order: 1;
+  border-radius: 12px;
 }
+
+.bannersImg {
+  width: 100%;
+  height: 340px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+
+  .swiper-container-baners {
+    height: 180px;
+    width: 100%;
+    margin: 0px auto;
+  }
+
+  .swiper-wrapper-baners {
+    height: 135px !important;
+    width: 291px !important;
+  }
+  .bannersImg {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+}
+
+/* ---- აქედან იწყება ჩემი სტილები */
 .slidersMainBox {
   width: 100%;
   height: 100%;
@@ -835,6 +502,7 @@ body {
 
 .swiper-button-next,
 .swiper-button-prev {
+  position: absolute;
   width: 50px !important;
   height: 50px !important;
   border-radius: 50%;
@@ -843,6 +511,7 @@ body {
   font-weight: 600;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px;
+  z-index: 111;
 }
 
 .giftIcon {
@@ -891,36 +560,12 @@ body {
   margin-bottom: 60px;
 }
 
-@media screen and (max-width: 1180px) {
-  .first__section-categories {
-    display: none;
-  }
-  .swiper-slide-m {
-    width: 291px !important;
-    height: 135px !important;
-  }
-  .swiper-slide-m img {
-    width: 100%;
-    height: 100%;
-  }
-  .swiper-button-next-m,
-  .swiper-button-prev-m {
-    display: none;
-  }
-}
-@media screen and (max-width: 1030px) {
-  .swiper-button-next,
-  .swiper-button-prev {
-    display: none;
-  }
-}
 @media screen and (max-width: 900px) {
   .swiper-slide-custom-style {
     width: 130px !important;
     height: 100%;
   }
 }
-
 
 @media screen and (max-width: 600px) {
   .cookie__title {
@@ -935,26 +580,244 @@ body {
   display: none;
 }
 
+/* მაკას კოდი */
+
+.first__section {
+  width: 100%;
+  max-width: 1200px; /* Limits the maximum width of the section */
+  display: flex; /* Enables flexbox layout */
+  justify-content: center; /* Centers children horizontally */
+  align-items: flex-start; /* Aligns children to the top */
+  padding: 0 15px; /*Adds space inside the section */
+  margin: 30px auto 0; /* Adds space on top, centers left and right */
+  position: relative; /* Sets a positioning context for absolutely positioned children */
+}
+
+.first__Section-main-div {
+  padding: 0 15px;
+}
+/* Categories section */
+.first__section-categories {
+  display: flex; /* Enables flexbox layout */
+  flex-direction: column; /* Stack children vertically */
+  width: 246px; /* Width of the categories section */
+  height: 344px; /* Height of the categories section */
+  padding: 0; /* No padding */
+  margin-right: 30px; /* No margin */
+  border: 0; /* No border */
+  background-color: white; /* Background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  position: relative; /* Add this line to create the positioning context */
+}
+
+/* Main Parent Category */
+.main-parent-category {
+  caret-color: transparent; /* Makes the caret invisible */
+  width: 246px; /* Sets the width of each category */
+  height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  cursor: pointer;
+  padding: 11.5px 10px 11.5px 15px;
+}
+.main-parent-category-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.a-tag-underline {
+  width: 246px;
+  justify-items: flex-start;
+  border-bottom: 1px solid #f2f2f2;
+  height: 43px;
+}
+.first__section-categories > .main-parent-category:last-child a {
+  border-bottom: none;
+}
+
+/* Changes link color on hover, visited, or active */
+.main-parent-category a:hover,
+.main-parent-category a:visited,
+.main-parent-category a:active {
+  color: black; /* Keeps link color consistent */
+  text-decoration: none; /* Ensures no underline */
+}
+/* Sets styles for category images */
+.main-parent-category a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-parent-category img {
+  width: 23px; /* Fixed width for category icons */
+  height: 20px; /* Fixed height for category icons */
+  margin-right: 10px; /* Adjust space to the right of the icon */
+}
+
+.main-parent-category h4 {
+  font-weight: 500; /* Font weight for category heading */
+  font-size: 12px; /* Font size */
+  line-height: 14px; /* Line height */
+  color: rgba(0, 0, 0, 0.8);
+  opacity: 0.8; /* Opacity */
+  cursor: pointer; /* Pointer on hover */
+  margin: 0; /* Remove default margin */
+}
+
+/* Change background color of the entire parent category on hover */
+.main-parent-category:hover {
+  background-color: #f2f2f2; /* Set hover background color */
+}
+
+/* Changes link color on hover, visited, or active */
+.main-parent-category a:hover,
+.main-parent-category a:visited,
+.main-parent-category a:active {
+  color: black; /* Keeps link color consistent */
+  text-decoration: none; /* Ensures no underline */
+}
+
+/* Subcategories menu - fixed width */
+.subcategories-menu {
+  height: auto;
+  position: absolute;
+  top: 0; /* Aligns with the top of the categories section */
+  left: 246px; /* Positions submenu next to the first category */
+  background: #fff;
+  padding: 20px;
+  z-index: 1000;
+  width: 925px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 12px;
+  gap: 30px;
+  padding: 20px;
+}
+#first__section-subcategories-container {
+  position: relative; /* This makes the container a reference for absolute positioning */
+}
+
+/* Styles for the bottom-left image container */
+.submenu-bottom-image {
+  display: none; /* Hides the container */
+  position: absolute; /* Position it relative to the #first__section-subcategories-container */
+  bottom: 0;
+  right: 0;
+}
+
+/* Style the image inside the submenu-bottom-image div */
+.submenu-bottom-image img {
+  width: 246px;
+  min-height: 342px;
+  background: var(--white-main);
+  border-radius: 12px;
+  display: block; /* Ensure the image behaves as a block element */
+}
+
+/* Flex basis adjustment to ensure max 4 columns */
+.parent-category {
+  flex: 0 1 22%;
+  max-width: 22%;
+  min-width: 150px;
+  display: block;
+  text-decoration: none;
+  padding: 5px 0;
+  white-space: nowrap;
+}
+
+/* Show subcategories when hovering over a main parent category */
+.main-parent-category:hover .subcategories-menu {
+  display: flex;
+}
+
+/* Styling for Parent Category Headers in Submenu */
+.parent-category {
+  font-size: 16px !important; /* Sets font size for parent categories */
+  font-weight: bold !important; /* Makes the text bold */
+  color: black !important; /* Sets text color */
+  text-decoration: none; /* Removes underline */
+  margin-bottom: 5px; /* Adds space below each parent category */
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* Styling for Subcategories (Links) */
+.subcategory-item {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  opacity: 0.8;
+  text-decoration: none; /* Removes underline */
+  white-space: nowrap;
+}
+
+.subcategory-item:hover {
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+/* Hide empty subcategory menus */
+.subcategories-menu:empty {
+  display: none; /* If no subcategories, don't display empty space */
+}
+.subcategory-image {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .nav__container-bottom-div {
+    gap: 80px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
+  .first__section-categories {
+    order: 1;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .floating-icons {
+    bottom: 80px;
+  }
+  .main-parent-category-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .subcategory-image {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    inset: 0px;
+    color: transparent;
+  }
 
   .parent-category {
     line-height: 14px !important;
     font-size: 12px !important; /* Sets font size for parent categories */
   }
-  .subcategories-menu .parent-category-container {
-    width: auto;
-  }
+
   .parent-category-container {
-    width: 100px;
+    width: 100%;
     margin-top: 20px;
-    gap: 6px;
-    display: grid !important;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
   }
 
   .subcategory-item {
     position: relative;
-    background: var(--white-400);
+    background: #f2f2f2;
     border-radius: 8px;
     padding: 8px;
     height: 100px;
@@ -981,18 +844,21 @@ body {
     margin-bottom: 20px;
   }
 
-  /* .subcategories-menu {
-    min-width: 400px; 
-    flex-wrap: wrap; 
-    flex-direction: row;
-  } 
-  */
-
-  .parent-category,
-  .subcategory-item {
-    flex: 1 1 45%; /* Switch to 2 columns on small screens */
+  /* .parent-category, */
+  /* .subcategory-item {
+    flex: 1 1 45%;
     max-width: 45%;
-  }
+    max-width: 80px;
+    display: flex;
+    flex-direction: column;
+    background: #f2f2f2;
+    position: relative;
+    border-radius: 8px;
+    padding: 8px;
+    height: 100px;
+    justify-content: space-between;
+    align-items: flex-end;
+  } */
 
   .submenu-bottom-image img {
     display: none;
@@ -1002,25 +868,16 @@ body {
     margin-right: 0px;
     max-width: 80px;
     min-height: 80px;
-    z-index: 100;
+    z-index: 10000;
     position: fixed;
-    top: 64px;
+    top: 53px;
     left: 0; /* Aligns the element to the left */
     height: calc(100% - 64px); /* Adjusts height to fill remaining space */
-    max-width: 80px;
-    min-height: 80px;
     overflow-y: scroll;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    gap: 1px;
-  }
-
-  /* Ensures the image is above the H4 */
-  .first__section-categories.open subcategory-image {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 5px;
+    gap: 2px;
   }
 
   .first__section-categories.open h4 {
@@ -1038,7 +895,7 @@ body {
     background: rgba(242, 242, 242, 0.3);
     padding: 8px;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     align-items: center;
     justify-content: end;
     text-align: center;
@@ -1047,15 +904,15 @@ body {
 
   .subcategories-menu {
     position: fixed;
-    top: 64px;
+    top: 53px;
     left: calc(80px);
-    height: calc(100% - 64px);
+    height: auto;
     width: calc(100% - 80px);
     min-height: 80px;
     padding: 10px 10px 50px;
     overflow-y: scroll;
     display: flex;
-    /* grid-template-columns: repeat(3, 1fr); */
+    flex-direction: column;
     gap: 20px;
   }
 
@@ -1066,10 +923,37 @@ body {
     line-height: 14px;
     color: var(--black-08);
   }
-
   .main-parent-category a {
-    max-width: 80px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  .main-parent-category img {
+    margin-right: 0px;
+    object-fit: cover;
+  }
+  .subcategory-item-name {
+    width: 100%;
+    text-align: start;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: rgba(0, 0, 0, 0.8);
+    word-break: break-word;
+    margin-bottom: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .parent-category,
+  .subcategory-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .subcategories-menu {
+    grid-template-columns: 1fr;
   }
 }

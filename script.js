@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log(searchInput);
   setTimeout(() => {
     searchInput = document.getElementById("search_input");
-    console.log(searchInput);
     searchInput.addEventListener("keyup", () => {
       let typingTimeout;
       clearTimeout(typingTimeout);
@@ -170,6 +169,49 @@ document.addEventListener("DOMContentLoaded", () => {
 let zoomerApiData = "";
 let zoommerSearchData = [];
 let swiperObject = {
+  swiper0: new Swiper(".swiper-container-baners", {
+    spaceBetween: 30,
+    speed: 800,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    watchOverflow: true,
+    breakpoints: {
+      1024: {
+        slidesPerView: 1,
+      },
+      700: {
+        slidesPerView: 3.5,
+        spaceBetween: 10,
+      },
+
+      500: {
+        slidesPerView: 2.5,
+        spaceBetween: 10,
+      },
+      300: {
+        slidesPerView: 1.5,
+        spaceBetween: 10,
+      },
+    },
+    on: {
+      init: function () {
+        this.update();
+      },
+      resize: function () {
+        this.update();
+      },
+    },
+  }),
   swiper1: new Swiper(".mySwiper1", {
     slidesPerView: 6,
     direction: getDirection(),
@@ -384,6 +426,16 @@ function getDirection() {
   return (window.innerWidth = "horizontal");
 }
 
+function bannersHtmlGenerator(item, sectionId) {
+  let bannersHtml = "";
+  bannersHtml += `
+  <div class="swiper-slide ">
+      <img class="bannersImg" src="${item.webImageUrl}" alt="${item.title}">
+  </div>`;
+
+  return bannersHtml;
+}
+
 function itemHtmlGenerator(item, sectionId) {
   let itemHtml = "";
   const monthlyPrice = (item.price / 12).toFixed(2);
@@ -424,7 +476,9 @@ function itemHtmlGenerator(item, sectionId) {
   itemHtml += `<div class="swiper-slide swiper-slide-custom-style" >
       <div id="product-${item.id}" class="mainCardbox">
        <div class="imgAndPricePart" ${sectionId ? addToResView : ""}>
+       
         <img class="slider--img" src="${item.imageUrl}" alt="${item.name}" />
+       
         ${saleBadge}
         ${labelText}
         <div class="price-description">
@@ -623,7 +677,7 @@ async function getDataFromZoommerApi() {
 
     const response2 = await fetch("productsData.json");
     zoommerSearchData = await response2.json();
-    let itemIndex = 1;
+    let itemIndex = 0;
 
     for (const section of zoomerApiData.section) {
       if (section.title) {
@@ -656,6 +710,14 @@ async function getDataFromZoommerApi() {
           newH1ForSwiper14,
           mySwiper14Container.firstChild
         );
+      }
+      if (section.banners) {
+        for (let item of section.banners) {
+          swiperObject["swiper" + itemIndex].appendSlide(
+            bannersHtmlGenerator(item, section.id)
+          );
+        }
+        itemIndex++;
       }
 
       if (section.products) {
@@ -715,7 +777,6 @@ window.onscroll = function () {
   if (window.scrollY > 50) {
     headerTopPart.style.display = "none";
     headerSecondLine.classList.add("scrolled");
-    console.log("teona");
   } else {
     headerTopPart.style.display = "flex";
     headerSecondLine.classList.remove("scrolled");
